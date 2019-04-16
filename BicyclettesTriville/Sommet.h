@@ -12,6 +12,9 @@ class Sommet
         void ajouterVoisin (Sommet* voisin);
         void afficherData ()const;
         void afficherVoisins () const;
+        std::string getIds();
+        double getX();
+        double getY();
 
         int getDegre();
 

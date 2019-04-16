@@ -11,7 +11,11 @@ class Arete
     public:
         Arete (std::string,float,float);
         void afficherData() const;
-
+        float getP1();
+        float getP2();
+        std::string getId();
+        std::string getId1();
+        std::string getId2();
         ~Arete();
 
 

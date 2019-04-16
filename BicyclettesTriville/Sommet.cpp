@@ -40,7 +40,7 @@ void Sommet::afficherVoisins() const
     }
 }
 
-/*double Sommet::getX()
+double Sommet::getX()
 {
     return m_x;
 }
@@ -50,7 +50,7 @@ double Sommet::getY()
     return m_y;
 }
 
-std::string Sommet::getId()
+std::string Sommet::getIds()
 {
     return m_id;
-}*/
+}

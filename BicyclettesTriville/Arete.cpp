@@ -8,27 +8,27 @@ void Arete::afficherData() const
      std::cout<<"    "<<m_id<<" : "<<"(P1,P2)=("<<m_p1<<","<<m_p2<<")"<<std::endl;
 }
 
-/*std::string Sommet::getId()
+std::string Arete::getId()
 {
     return m_id;
 }
 
-float Sommet::getP1()
+float Arete::getP1()
 {
     return m_p1;
 }
 
-float Sommet::getP2()
+float Arete::getP2()
 {
     return m_p2;
 }
 
-std::string Sommet::getId1()
+std::string Arete::getId1()
 {
     return m_idS1;
 }
 
-std::string Sommet::getId2()
+std::string Arete::getId2()
 {
     return m_idS2;
-}*/
+}

@@ -106,7 +106,7 @@ void Graphe::dessinerGraphe()
     Svgfile svgout;
     svgout.addGrid();
     svgout.addLine(100, 200, 0, 0); ///prendre les coods parcourir la map
-//    svgout.addDisk(m_id, m_id, 8, "black");
+    //svgout.addDisk(getX()->m_s,getY()->m_s, 8, "black");
 
 }
 
