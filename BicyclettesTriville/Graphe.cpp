@@ -1,4 +1,5 @@
 #include "Graphe.h"
+#include "Sommet.h"
 
 Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 {
@@ -88,7 +89,7 @@ void Graphe::dessinerGraphe()
     Svgfile svgout;
     svgout.addGrid();
     svgout.addLine(100, 200, 0, 0);
-    //svgout.addDisk(100, 100, 90, "greyball");
+//    svgout.addDisk(m_id, m_id, 10, "grey");
 
 }
 

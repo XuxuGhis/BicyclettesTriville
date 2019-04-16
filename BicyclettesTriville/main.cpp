@@ -11,6 +11,7 @@ int main()
     Graphe g{"broadway.txt", "broadway_weights_0.txt"};
 
     g.dessinerGraphe();
+    g.afficher();
 
 
     //On ouvre le ficher "output.svg"
