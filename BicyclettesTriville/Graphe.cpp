@@ -29,6 +29,11 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
     for (int i=0; i<taille; ++i)
     {
         //lecture des ids des deux extr�mit�s
+        int idarete;
+        ifs>>idarete;
+        if (idarete!=i)
+            throw std::runtime_error( "Incoherence ... " + nomFichier );
+
         ifs>>id; if(ifs.fail()) throw std::runtime_error("Probleme lecture arete sommet 1");
         ifs>>id_voisin; if(ifs.fail()) throw std::runtime_error("Probleme lecture arete sommet 2");
         //ajouter chaque extremite a la liste des voisins de l'autre (graphe non orient�)
@@ -59,18 +64,20 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
         ifs2>>id2; if(ifs.fail()) throw std::runtime_error("Probleme lecture donnees arete");
         ifs2>>p1; if(ifs.fail()) throw std::runtime_error("Probleme lecture donnees arete");
         ifs2>>p2; if(ifs.fail()) throw std::runtime_error("Probleme lecture donnees arete");
-        m_a.insert({id,new Arete{id2,p1,p2}});
+        m_a.insert({id2,new Arete{id2,p1,p2}});
     }
 
 }
 
 void Graphe::afficher ()const
 {
-    int n = 0;
+    //int n = 0;
 
     ///PAS super !!!!!
-    for(auto it = m_s.begin(); it != m_s.end(); ++it)
-        ++n;
+    //for(auto it = m_s.begin(); it != m_s.end(); ++it)
+    //    ++n;
+
+    int n = m_s.size();
 
     std::cout<<"graphe : "<<std::endl;
     std::cout<<"  ordre : "<< n <<std::endl;
@@ -79,8 +86,18 @@ void Graphe::afficher ()const
     {
         std::cout<<"  sommet : "<<std::endl;
         it.second->afficherData();
+        std::cout << ".........." << std::endl;
         it.second->afficherVoisins();
+        std::cout << "============================" << std::endl << std::endl;
     }
+
+    for(auto it2 : m_a)
+    {
+        std::cout<<"  arete : "<<std::endl;
+        it2.second->afficherData();
+    }
+
+
 
 }
 
@@ -88,8 +105,8 @@ void Graphe::dessinerGraphe()
 {
     Svgfile svgout;
     svgout.addGrid();
-    svgout.addLine(100, 200, 0, 0);
-//    svgout.addDisk(m_id, m_id, 10, "grey");
+    svgout.addLine(100, 200, 0, 0); ///prendre les coods parcourir la map
+//    svgout.addDisk(m_id, m_id, 8, "black");
 
 }
 

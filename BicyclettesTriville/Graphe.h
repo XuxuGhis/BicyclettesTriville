@@ -24,6 +24,9 @@ class Graphe
 
     private:
         std::unordered_map <std::string,Sommet *> m_s;
+        //std::unordered_map <int, Sommet *> m_s;
+        //std::vector<Sommet *> m_s;
+
         std::unordered_map <std::string,Arete *> m_a;
 };
 

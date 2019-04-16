@@ -10,6 +10,8 @@ class Arete
 {
     public:
         Arete (std::string,float,float);
+        void afficherData() const;
+
         ~Arete();
 
 

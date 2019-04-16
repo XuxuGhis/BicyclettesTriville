@@ -18,6 +18,8 @@ int Sommet::getDegre()
 void Sommet::ajouterVoisin (Sommet* voisin)
 {
     m_voisins.push_back(voisin);
+
+    std::cout << m_id << " : ajout du voisin " << voisin->m_id << std::endl;
 }
 
 
@@ -38,3 +40,17 @@ void Sommet::afficherVoisins() const
     }
 }
 
+/*double Sommet::getX()
+{
+    return m_x;
+}
+
+double Sommet::getY()
+{
+    return m_y;
+}
+
+std::string Sommet::getId()
+{
+    return m_id;
+}*/

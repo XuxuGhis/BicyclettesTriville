@@ -15,7 +15,7 @@ int main()
 
 
     //On ouvre le ficher "output.svg"
-    system("start output.svg");
+    //system("start output.svg");
 
 
     system("PAUSE");          //On attend que l'utilisateur appuis sur une touche
