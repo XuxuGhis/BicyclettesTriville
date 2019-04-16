@@ -17,17 +17,18 @@ class Graphe
     public:
         Graphe(std::string nomFichier, std::string nomFic2);
 
-        void dessinerGraphe();
+        void dessinerGraphe(Svgfile& fichiersvg);
         void afficher() const;
         ~Graphe();
 
 
     private:
-        std::unordered_map <std::string,Sommet *> m_s;
+      //  std::unordered_map <std::string,Sommet *> m_s;
         //std::unordered_map <int, Sommet *> m_s;
-        //std::vector<Sommet *> m_s;
+        std::vector<Sommet* > m_s;
+        std::vector<Arete* > m_a;
 
-        std::unordered_map <std::string,Arete *> m_a;
+       // std::unordered_map <std::string,Arete *> m_a;
 };
 
 

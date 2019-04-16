@@ -1,7 +1,7 @@
 #include "Sommet.h"
 
 //Constructeur de sommet
-Sommet::Sommet(std::string id,double x,double y):m_id{id},m_x{x},m_y{y}
+Sommet::Sommet(int id,double x,double y):m_id{id},m_x{x},m_y{y}
 { }
 
 //Retourne le degre d'un sommet
@@ -40,7 +40,14 @@ void Sommet::afficherVoisins() const
     }
 }
 
-/*double Sommet::getX()
+void Sommet::dessinerSommet(Svgfile& fichiersvg)
+{
+    int rayon = 3;
+    std::string couleur = "rgb(200, 0, 0)";
+    fichiersvg.addDisk(m_x, m_y, rayon, couleur);
+}
+
+double Sommet::getX()
 {
     return m_x;
 }
@@ -50,7 +57,7 @@ double Sommet::getY()
     return m_y;
 }
 
-std::string Sommet::getId()
+int Sommet::getIdSommet()
 {
     return m_id;
-}*/
+}
