@@ -17,6 +17,7 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
     double x_som2, y_som2;
 
     std::string couleur = "rgb(0, 0, 0)";
+    std::string couleur2 = "rgb(0, 119, 179)";
 
     x_som1 = v_tmp[m_idS1]->getX();
     y_som1 = v_tmp[m_idS1]->getY();
@@ -24,8 +25,15 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
     x_som2 = v_tmp[m_idS2]->getX();
     y_som2 = v_tmp[m_idS2]->getY();
 
+    double x_text = (x_som1+x_som2)/2;
+    double y_text = (y_som1+y_som2)/2;
+
     if (selec == 1)
+    {
         fichiersvg.addLine(x_som1, y_som1, x_som2, y_som2);
+        fichiersvg.addText(x_text, y_text - 3.7, m_id, couleur2);
+    }
+
     else if (selec == 0)
         std::cout<<"ON AFFICHE R"<<std::endl;
     else

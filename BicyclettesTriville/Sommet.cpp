@@ -45,6 +45,8 @@ void Sommet::dessinerSommet(Svgfile& fichiersvg)
     int rayon = 3;
     std::string couleur = "rgb(200, 0, 0)";
     fichiersvg.addDisk(m_x, m_y, rayon, couleur);
+    fichiersvg.addText(m_x+7.7, m_y -3, m_id, couleur);
+
 }
 
 double Sommet::getX()

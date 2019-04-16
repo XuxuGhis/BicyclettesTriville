@@ -28,7 +28,6 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 
 
     //lecture des aretes
-    auto it = m_s.begin();
     std::ifstream ifs2{nomFic2};
 
     int taille2;
@@ -70,59 +69,8 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 
 
         m_a.push_back(new Arete{id2,p1,p2,idS1,idS2});
-        ++it;
+
     }
-
-
-/**
-        for (int i=0; i<taille; ++i)
-    {
-        //lecture des ids des deux extr�mit�s
-        int idarete;
-        ifs>>idarete;
-        if (idarete!=i)
-            throw std::runtime_error( "Incoherence du nombre d'arrete" + nomFichier );
-
-        ifs>>id; if(ifs.fail()) throw std::runtime_error("Probleme lecture arete sommet 1");
-        ifs>>id_voisin; if(ifs.fail()) throw std::runtime_error("Probleme lecture arete sommet 2");
-        //ajouter chaque extremite a la liste des voisins de l'autre (graphe non orient�)
-        Sommet* s_tempo = m_s[id_voisin];
-        m_s[i]->ajouterVoisin(s_tempo);
-      //  (m_s.find(id))->second->ajouterVoisin((m_s.find(id_voisin))->second);
-       // (m_s.find(id_voisin))->second->ajouterVoisin((m_s.find(id))->second);
-
-        //remove si graphe orient�
-        ++it;
-    }
-
-
-
-    std::ifstream ifs2{nomFic2};
-    if (!ifs2)
-        throw std::runtime_error( "Impossible d'ouvrir en lecture " + nomFic2 );
-
-    int taille2;
-    int nbPoids;
-
-    ifs2 >> taille2;
-    if (ifs2.fail())
-        throw std::runtime_error("Probleme lecture taille du graphe");
-    ifs2 >> nbPoids;
-    if (ifs2.fail())
-        throw std::runtime_error("Probleme lecture nombre de poids du graphe");
-
-    int id2;
-    float p1;
-    float p2;
-
-    for (int t=0; t<taille2; ++t)
-    {
-        ifs2>>id2; if(ifs.fail()) throw std::runtime_error("Probleme lecture donnees arete");
-        ifs2>>p1; if(ifs.fail()) throw std::runtime_error("Probleme lecture donnees arete");
-        ifs2>>p2; if(ifs.fail()) throw std::runtime_error("Probleme lecture donnees arete");
-        m_a.push_back(new Arete{id2,p1,p2,idS1,idS2});
-    }**/
-
 }
 
 void Graphe::afficher ()const
@@ -160,7 +108,7 @@ void Graphe::afficher ()const
 void Graphe::dessinerGraphe(Svgfile& fichiersvg)
 {
 
-    fichiersvg.addGrid();
+    //fichiersvg.addGrid();
 
     for(auto itS : m_s)
         itS->dessinerSommet(fichiersvg);

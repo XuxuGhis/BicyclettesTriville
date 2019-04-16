@@ -8,7 +8,7 @@ int main()
 
     Svgfile svgout;
 
-    Graphe g{"broadway.txt", "broadway_weights_0.txt"};
+    Graphe g{"cubetown.txt", "cubetown_weights_0.txt"};
 
     g.dessinerGraphe(svgout);
     g.afficher();
