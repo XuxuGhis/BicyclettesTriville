@@ -3,6 +3,9 @@
 
 #include "Sommet.h"
 #include "Arete.h"
+
+#include "svgfile.h"
+
 #include <unordered_map>
 #include <string>
 #include <queue>
@@ -13,6 +16,8 @@ class Graphe
 {
     public:
         Graphe(std::string nomFichier, std::string nomFic2);
+
+        void dessinerGraphe();
         void afficher() const;
         ~Graphe();
 

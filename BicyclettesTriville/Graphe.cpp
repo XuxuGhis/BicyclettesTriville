@@ -83,6 +83,15 @@ void Graphe::afficher ()const
 
 }
 
+void Graphe::dessinerGraphe()
+{
+    Svgfile svgout;
+    svgout.addGrid();
+    svgout.addLine(100, 200, 0, 0);
+    //svgout.addDisk(100, 100, 90, "greyball");
+
+}
+
 
 Graphe::~Graphe()
 {
