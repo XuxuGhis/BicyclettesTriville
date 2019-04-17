@@ -1,67 +1,52 @@
-#include "Graphe.h"
+#include "Nuage.h"
 
 
 
-void Kruskal_1(Graphe g);
-void Kruskal_2(Graphe g);
+void ouvrirOutput();
+void fermerOutput();
 
 int main()
 {
+    {
+    Svgfile svgout;
+    Svgfile svgout2("output2.svg");
+
+    std::string nomFich_1 = "manhattan.txt";
+    std::string nomFich_2= "manhattan_weights_0.txt";
 
 
-   // Graphe g{"cubetown.txt", "cubetown_weights_0.txt"};
-   Graphe g{"manhattan.txt", "manhattan_weights_0.txt"};
-   Graphe g2{"manhattan.txt", "manhattan_weights_0.txt"};
-    // Graphe g{"triville.txt", "triville_weights_0.txt"};
-    //Graphe g{"broadway.txt", "broadway_weights_2.txt"};
+    Graphe g{nomFich_1,nomFich_2};
 
+    Nuage n(&g);
 
+    g.dessinerGraphe(svgout);
+    n.Kruskal(1, svgout, nomFich_1, nomFich_2);
 
-    Kruskal_1(g);
-    Kruskal_2(g2);
+    g.dessinerGraphe(svgout2);
+    n.Kruskal(2, svgout2, nomFich_1, nomFich_2);
+    }
 
-    //On ouvre le ficher "output.svg"
-    system("start output.svg");
-    system("start output2.svg");
+    ouvrirOutput();
 
-
-
-    system("PAUSE");          //On attend que l'utilisateur appuis sur une touche
-
-    //system("TASKKILL /IM chrome.exe"); // On ferme tous les ficher de Google Chrome
-
-    //system("cls"); //On clean la console pour bien montrer que c'est la fin
-
+    fermerOutput();
 
     return 0;
 }
 
-
-void Kruskal_1(Graphe g)
+void ouvrirOutput()
 {
-
-    Svgfile svgout;
-
- // std::cout<< n<<"!!!!"<<std::endl;
-    g.dessinerGraphe(svgout);
-
-    g.kruskal(1);
-
-
-    g.dessinerGrapheKruskal(svgout, 500);
-
+    //system("cls"); //On clean la console pour bien montrer que c'est la fin
+    system("start output.svg");
+    system("start output2.svg");
 }
 
-void Kruskal_2(Graphe g)
+void fermerOutput()
 {
-
-    Svgfile svgout2("output2.svg");
-
-    g.dessinerGraphe(svgout2);
-
-    g.kruskal(2);
-
-    g.dessinerGrapheKruskal(svgout2, 500);
-
+    //On attend que l'utilisateur appuis sur une touche
+    system("PAUSE");
+    // On ferme tous les ficher de Google Chrome
+    system("TASKKILL /IM chrome.exe");
+    system("cls");
 }
+
 

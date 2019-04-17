@@ -88,11 +88,6 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 
 void Graphe::afficher ()const
 {
-    //int n = 0;
-
-    ///PAS super !!!!!
-    //for(auto it = m_s.begin(); it != m_s.end(); ++it)
-    //    ++n;
 
     int n = m_s.size();
 
@@ -179,8 +174,6 @@ void Graphe::kruskal(int choix_p)
 
     int p ;
 
-    ///G = (m_a[n]->Ajoutpoidsarete(choix_p));
-
     for(auto it2 : m_a)
     {
         if (choix_p == 1)
@@ -189,9 +182,9 @@ void Graphe::kruskal(int choix_p)
         else if (choix_p == 2)
             p = it2->getP2();
 
-        std::cout << "m_p__-"<< p<< std::endl;
+      //  std::cout << "m_p__-"<< p<< std::endl;
 
-       // std::cout << "ordre"<< it2<< std::endl;
+
         G.push_back(make_pair(p, arete(it2->getIdArete_s1(), it2->getIdArete_s2())));
 
     }
@@ -203,13 +196,14 @@ void Graphe::kruskal(int choix_p)
     int uRep, vRep;
 
 
-   /// sort(G.begin(), G.end(), triArete(G)); // tri de poids
+    //sort(G.begin(), G.end(), triArete(G)); // tri de poids
+
     sort(G.begin(), G.end()); // tri de poids
 
     for (i = 0; i < G.size(); i++)
     {
         uRep = trouver_parent(G[i].second.first);
-        std::cout << G[i].first<< std::endl;
+       // std::cout << G[i].first<< std::endl;
         vRep = trouver_parent(G[i].second.second);
        // std::cout << "DEBUT KRUSKAL" << std::endl;
         if (uRep != vRep)
@@ -220,9 +214,6 @@ void Graphe::kruskal(int choix_p)
         }
        // std::cout << "T____"<< T[i].first<< std::endl;
     }
-
-   /* for (size_t i = 0; i<T.size(); ++i)
-        std::cout << "T_2___"<< T[i].first<< std::endl;*/
 
    // std::cout << "FIN KRUSKAL" << std::endl;
 }

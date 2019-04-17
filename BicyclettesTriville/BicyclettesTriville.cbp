@@ -36,6 +36,8 @@
 		<Unit filename="Arete.h" />
 		<Unit filename="Graphe.cpp" />
 		<Unit filename="Graphe.h" />
+		<Unit filename="Nuage.cpp" />
+		<Unit filename="Nuage.h" />
 		<Unit filename="Sommet.cpp" />
 		<Unit filename="Sommet.h" />
 		<Unit filename="main.cpp" />

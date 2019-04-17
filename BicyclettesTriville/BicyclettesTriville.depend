@@ -30,12 +30,12 @@
 	<queue>
 	<iostream>
 
-1555502441 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\graphe.cpp
+1555512350 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\graphe.cpp
 	"Graphe.h"
 	"Sommet.h"
 	<stdlib.h>
 
-1555502441 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\graphe.h
+1555510693 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\graphe.h
 	"Sommet.h"
 	"Arete.h"
 	"svgfile.h"
@@ -59,13 +59,13 @@
 	"Sommet.h"
 	"svgfile.h"
 
-1555502441 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\main.cpp
-	"Graphe.h"
+1555512409 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\main.cpp
+	"Nuage.h"
 
 1555502441 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\sommet.cpp
 	"Sommet.h"
 
-1555502441 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\arete.cpp
+1555512321 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\arete.cpp
 	"Arete.h"
 
 1555502441 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\svgfile.cpp
@@ -122,4 +122,10 @@
 	<iostream>
 	<sstream>
 	<fstream>
+
+1555510989 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\nuage.h
+	"Graphe.h"
+
+1555510819 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\nuage.cpp
+	"Nuage.h"
 

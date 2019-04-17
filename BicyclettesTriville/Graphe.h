@@ -15,11 +15,11 @@
 
 
 
+
 class Graphe
 {
     public:
         Graphe(std::string nomFichier, std::string nomFic2);
-      //  Graphe(int nbsommet);
 
         void dessinerGraphe(Svgfile& fichiersvg);
         void dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage);

@@ -89,35 +89,21 @@ std::vector<std::pair<int, arete>> Arete::Ajoutpoidsarete(int choix_p)
     int p ;
 
     if (choix_p == 1)
-    {
         p = m_p1;
-    }
 
     else if (choix_p == 2)
         p = m_p2;
 
-    std::cout << "m_p1__-"<< m_p1<< std::endl;
+    //std::cout << "m_p1__-"<< m_p1<< std::endl;
 
     G.push_back(make_pair(p, arete(m_idS1, m_idS2)));
 
-    for (size_t i = 0; i<G.size(); ++i)
-        std::cout << "G_--___"<< G[i].first<< std::endl;
+   /* for (size_t i = 0; i<G.size(); ++i)
+        std::cout << "G_--___"<< G[i].first<< std::endl;*/
     return G;
 
 }
 
-/*
-bool Arete::triArete(std::vector<std::pair<int, arete>> v_tri)
-{
-    for (size_t t = 0; t<v_tri.size(); ++t)
-    {
-        if (v_tri[t].first > v_tri[t+1].first)
-            return 0;
-
-        else
-            return 1;
-    }
-}*/
 
 int Arete::getIdArete()
 {
