@@ -153,7 +153,6 @@ void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage)
 
     }
 
-    T.clear();
 }
 
 

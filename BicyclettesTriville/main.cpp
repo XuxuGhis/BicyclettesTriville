@@ -21,8 +21,8 @@ int main()
     Kruskal_2(g2);
 
     //On ouvre le ficher "output.svg"
-    //system("start output.svg");
-   // system("start output2.svg");
+    system("start output.svg");
+    system("start output2.svg");
 
 
 
