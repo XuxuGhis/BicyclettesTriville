@@ -10,6 +10,7 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
     ifs >> ordre;
     if ( ifs.fail() )
         throw std::runtime_error("Probleme lecture ordre du graphe");
+    m_ordre = ordre;
     int id;
     double x,y;
     //lecture des sommets
@@ -71,7 +72,17 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
         m_a.push_back(new Arete{id2,p1,p2,idS1,idS2});
 
     }
+
+    parent = new int[m_ordre];
+
+    for (int i = 0; i < m_ordre; i++)
+        parent[i] = i;
+
+    G.clear();
+    T.clear();
+
 }
+
 
 void Graphe::afficher ()const
 {
@@ -107,17 +118,103 @@ void Graphe::afficher ()const
 
 void Graphe::dessinerGraphe(Svgfile& fichiersvg)
 {
-
     //fichiersvg.addGrid();
 
     for(auto itS : m_s)
-        itS->dessinerSommet(fichiersvg);
+        itS->dessinerSommet(fichiersvg, 0);
 
     for(auto itA : m_a)
         itA->dessinerArete(fichiersvg, m_s, 1);
 
+}
 
 
+void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage)
+{
+
+
+    //fichiersvg.addGrid();
+
+    for(auto itS : m_s)
+    {
+        itS->dessinerSommet(fichiersvg, decalage);
+    }
+
+    std::vector<Arete* >::iterator itA;
+/*    auto itA:: m_a;
+
+   for(auto itA : m_a)
+    {
+        for (int unsigned i = 0; i < T.size(); i++)
+            itA->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second);
+    }*/
+
+    for (int unsigned i = 0; i < T.size(); i++)
+    {
+        m_a[i]->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second, decalage);
+
+       // std::cout<<"sssssssssssssssssssss !!" << T[i].second.first <<std::endl;
+
+
+    }
+
+}
+
+
+
+int Graphe::trouver_parent(int i)
+ {
+    //Si i est son propre parent
+    if (i == parent[i])
+        return i;
+    else
+        // si non, on le cherche
+
+        return trouver_parent(parent[i]);
+}
+
+void Graphe::union_set(int u, int v)
+{
+    parent[u] = parent[v];
+}
+
+void Graphe::kruskal(int n, int choix_p)
+{
+    G = m_a[n]->Ajoutpoidsarete(choix_p);
+
+    // std::cout << "DEBUT KRUSKAL" << std::endl;
+
+    int unsigned i;
+    int uRep, vRep;
+    sort(G.begin(), G.end()); // tri de poids
+    for (i = 0; i < G.size(); i++) {
+        uRep = trouver_parent(G[i].second.first);
+        vRep = trouver_parent(G[i].second.second);
+        if (uRep != vRep) {
+            T.push_back(G[i]); // ajout � l'arbre
+            union_set(uRep, vRep);
+        }
+    }
+
+
+   // std::cout << "FIN KRUSKAL" << std::endl;
+}
+void Graphe::afficher()
+{
+    std::cout << "Arete :" << " Poids" << std::endl;
+    for (int unsigned i = 0; i < T.size(); i++)
+    {
+        std::cout << T[i].second.first << " - " << T[i].second.second << " : "
+                << T[i].first;
+        std::cout << std::endl;
+    }
+}
+
+//https://www.programiz.com/dsa/kruskal-algorithm
+
+int Graphe::getOrdre()
+{
+    return m_ordre;
 }
 
 

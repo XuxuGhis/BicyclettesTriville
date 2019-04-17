@@ -1,18 +1,25 @@
 #include "Graphe.h"
 
+Svgfile svgout;
 
-void svgTest();
+void Kruskal(Graphe g);
 
 int main()
 {
 
-    Svgfile svgout;
+  //float p1,p2;
+
+
+
 
     Graphe g{"cubetown.txt", "cubetown_weights_0.txt"};
+//    Graphe g{"manhattan.txt", "manhattan_weights_0.txt"};
 
     g.dessinerGraphe(svgout);
-    g.afficher();
 
+
+
+    Kruskal(g);
 
     //On ouvre le ficher "output.svg"
     system("start output.svg");
@@ -29,33 +36,21 @@ int main()
 }
 
 
-void svgTest()
+void Kruskal(Graphe g)
 {
-    /// Sortie graphique dans le fichier output.svg
-    /// ( options � voir svgfile.h ligne 23 )
+
+  int n = g.getOrdre();
+
+ // std::cout<< n<<"!!!!"<<std::endl;
+
+  for (int i = 0; i<n; ++i)
+  {
+      g.kruskal(i,1);
+  }
+
+  g.afficher();
+
+  g.dessinerGrapheKruskal(svgout, 500);
 
 
-    /// Dessin du rep�re cart�sien
-
-
-    //svgout.addDisk(100, 100, 90, "greyball");
-   // svgout.addDisk(500, 100, 50, "blueball");
-    /*svgout.addDisk(300, 100, 70, "greenball");
-    svgout.addDisk(500, 100, 50, "blueball");
-    svgout.addDisk(700, 100, 30, "greyball");
-
-    /// Dessins de disques
-    svgout.addDisk(100, 300, 30, "red");
-    svgout.addDisk(300, 300, 50, "green");
-    svgout.addDisk(500, 300, 70, "blue");
-    svgout.addDisk(700, 300, 90, "grey");*/
-
-    /// Dessins de croix
-    //svgout.addCross(300, 300, 50);
-
-
-    /// L'objet svgout est automatiquement lib�r� � la sortie
-    /// de ce sous-programme : le fichier output.svg est alors ferm�
 }
-
-

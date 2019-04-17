@@ -13,7 +13,7 @@ class Sommet
         void ajouterVoisin (Sommet* voisin);
         void afficherData ()const;
         void afficherVoisins () const;
-        void dessinerSommet(Svgfile& fichiersvg);
+        void dessinerSommet(Svgfile& fichiersvg, int decalage);
 
         int getIdSommet();
         double getX();

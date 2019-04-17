@@ -8,13 +8,20 @@
 #include "Sommet.h"
 #include "svgfile.h"
 
+#define arete std::pair<int,int>
+
 class Arete
 {
     public:
         Arete (int id, double p1, double p2, int idS1, int idS2);
         void afficherData() const;
         void dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int selec);
+        void dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int id1, int id2, int decalage);
+
+
         int getIdArete();
+
+        std::vector<std::pair<int, arete>> Ajoutpoidsarete(int choix_p);
 
         double getP1();
         double getP2();

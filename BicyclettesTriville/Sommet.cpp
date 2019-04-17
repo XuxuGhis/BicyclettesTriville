@@ -40,12 +40,12 @@ void Sommet::afficherVoisins() const
     }
 }
 
-void Sommet::dessinerSommet(Svgfile& fichiersvg)
+void Sommet::dessinerSommet(Svgfile& fichiersvg, int decalage)
 {
     int rayon = 3;
     std::string couleur = "rgb(200, 0, 0)";
-    fichiersvg.addDisk(m_x, m_y, rayon, couleur);
-    fichiersvg.addText(m_x+7.7, m_y -3, m_id, couleur);
+    fichiersvg.addDisk(m_x+decalage, m_y, rayon, couleur);
+    fichiersvg.addText(m_x+7.7+decalage, m_y -3, m_id, couleur);
 
 }
 

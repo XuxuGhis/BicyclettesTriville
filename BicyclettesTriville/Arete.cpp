@@ -39,8 +39,61 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
     else
         std::cout<<"PAS COMPRIS !!"<<std::endl;
 
+}
+
+void Arete::dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int id1, int id2, int decalage)
+{
+    double x_som1, y_som1;
+    double x_som2, y_som2;
+
+    std::string couleur = "rgb(0, 0, 0)";
+    std::string couleur2 = "rgb(0, 119, 179)";
+
+    x_som1 = v_tmp[id1]->getX();
+    y_som1 = v_tmp[id1]->getY();
+
+    x_som2 = v_tmp[id2]->getX();
+    y_som2 = v_tmp[id2]->getY();
+
+
+    //std::cout<<"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!"<<std::endl;
+
+
+    double x_text = (x_som1+x_som2)/2;
+    double y_text = (y_som1+y_som2)/2;
+
+    fichiersvg.addLine(x_som1+decalage, y_som1, x_som2+decalage, y_som2);
+    fichiersvg.addText(x_text+decalage, y_text - 3.7, m_id, couleur2);
+
 
 }
+
+
+
+std::vector<std::pair<int, arete>> Arete::Ajoutpoidsarete(int choix_p)
+{
+
+    std::vector<std::pair<int, arete>> G;
+    G.clear();
+
+  //  std::cout<< "MARCHE PUTAIN !"<<std::endl;
+
+    int x = m_idS1;
+    int y = m_idS2;
+    int p ;
+
+    if (choix_p == 1)
+        p = m_p1;
+
+    else if (choix_p == 2)
+        p = m_p2;
+
+    G.push_back(make_pair(p, arete(x, y)));
+
+    return G;
+
+}
+
 
 
 int Arete::getIdArete()
