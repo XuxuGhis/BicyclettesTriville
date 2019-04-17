@@ -30,7 +30,7 @@ class Graphe
         void Ajoutpoidsarete(int choix_p);
         int trouver_parent(int i);
         void union_set(int u, int v);
-        void kruskal(int n, int choix_p);
+        void kruskal(int choix_p);
         void afficher();
 
         int getOrdre();
@@ -51,6 +51,7 @@ class Graphe
         int nbsommet; // number of vertices/nodes in graph
 };
 
+bool triArete(std::vector<std::pair<int, arete>> v_tri);
 
 
 #endif // GRAPHE_H_INCLUDED

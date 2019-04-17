@@ -18,6 +18,7 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
 
     std::string couleur = "rgb(0, 0, 0)";
     std::string couleur2 = "rgb(0, 119, 179)";
+    std::string couleur3 = "rgb(0, 200, 0)";
 
     x_som1 = v_tmp[m_idS1]->getX();
     y_som1 = v_tmp[m_idS1]->getY();
@@ -28,10 +29,17 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
     double x_text = (x_som1+x_som2)/2;
     double y_text = (y_som1+y_som2)/2;
 
+    double moins = 15;
+
     if (selec == 1)
     {
         fichiersvg.addLine(x_som1, y_som1, x_som2, y_som2);
         fichiersvg.addText(x_text, y_text - 3.7, m_id, couleur2);
+       // fichiersvg.addText(x_text-moins, y_text - 3.7-moins, "(", couleur2);
+        fichiersvg.addText(x_text-moins-3, y_text - 3.7-moins, m_p1, couleur3);
+       // fichiersvg.addText(x_text-moins-5, y_text - 3.7-moins, ",", couleur3);
+        fichiersvg.addText(x_text-moins-7, y_text - 3.7, m_p2, couleur3);
+        //fichiersvg.addText(x_text-moins-9, y_text - 3.7-moins, ")", couleur3);
     }
 
     else if (selec == 0)
@@ -78,23 +86,38 @@ std::vector<std::pair<int, arete>> Arete::Ajoutpoidsarete(int choix_p)
 
   //  std::cout<< "MARCHE PUTAIN !"<<std::endl;
 
-    int x = m_idS1;
-    int y = m_idS2;
     int p ;
 
     if (choix_p == 1)
+    {
         p = m_p1;
+    }
 
     else if (choix_p == 2)
         p = m_p2;
 
-    G.push_back(make_pair(p, arete(x, y)));
+    std::cout << "m_p1__-"<< m_p1<< std::endl;
 
+    G.push_back(make_pair(p, arete(m_idS1, m_idS2)));
+
+    for (size_t i = 0; i<G.size(); ++i)
+        std::cout << "G_--___"<< G[i].first<< std::endl;
     return G;
 
 }
 
+/*
+bool Arete::triArete(std::vector<std::pair<int, arete>> v_tri)
+{
+    for (size_t t = 0; t<v_tri.size(); ++t)
+    {
+        if (v_tri[t].first > v_tri[t+1].first)
+            return 0;
 
+        else
+            return 1;
+    }
+}*/
 
 int Arete::getIdArete()
 {

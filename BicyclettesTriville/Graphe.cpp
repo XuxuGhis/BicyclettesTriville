@@ -1,5 +1,7 @@
 #include "Graphe.h"
 #include "Sommet.h"
+#include <stdlib.h>
+
 
 Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 {
@@ -141,13 +143,7 @@ void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage)
     }
 
     std::vector<Arete* >::iterator itA;
-/*    auto itA:: m_a;
 
-   for(auto itA : m_a)
-    {
-        for (int unsigned i = 0; i < T.size(); i++)
-            itA->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second);
-    }*/
 
     for (int unsigned i = 0; i < T.size(); i++)
     {
@@ -155,9 +151,9 @@ void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage)
 
        // std::cout<<"sssssssssssssssssssss !!" << T[i].second.first <<std::endl;
 
-
     }
 
+    T.clear();
 }
 
 
@@ -178,24 +174,56 @@ void Graphe::union_set(int u, int v)
     parent[u] = parent[v];
 }
 
-void Graphe::kruskal(int n, int choix_p)
+
+void Graphe::kruskal(int choix_p)
 {
-    G = m_a[n]->Ajoutpoidsarete(choix_p);
+
+    int p ;
+
+    ///G = (m_a[n]->Ajoutpoidsarete(choix_p));
+
+    for(auto it2 : m_a)
+    {
+        if (choix_p == 1)
+            p = it2->getP1();
+
+        else if (choix_p == 2)
+            p = it2->getP2();
+
+        std::cout << "m_p__-"<< p<< std::endl;
+
+       // std::cout << "ordre"<< it2<< std::endl;
+        G.push_back(make_pair(p, arete(it2->getIdArete_s1(), it2->getIdArete_s2())));
+
+    }
+
 
     // std::cout << "DEBUT KRUSKAL" << std::endl;
 
     int unsigned i;
     int uRep, vRep;
+
+
+   /// sort(G.begin(), G.end(), triArete(G)); // tri de poids
     sort(G.begin(), G.end()); // tri de poids
-    for (i = 0; i < G.size(); i++) {
+
+    for (i = 0; i < G.size(); i++)
+    {
         uRep = trouver_parent(G[i].second.first);
+        std::cout << G[i].first<< std::endl;
         vRep = trouver_parent(G[i].second.second);
-        if (uRep != vRep) {
+       // std::cout << "DEBUT KRUSKAL" << std::endl;
+        if (uRep != vRep)
+        {
             T.push_back(G[i]); // ajout � l'arbre
+           // std::cout << "T"<< T[i].first<< std::endl;
             union_set(uRep, vRep);
         }
+       // std::cout << "T____"<< T[i].first<< std::endl;
     }
 
+   /* for (size_t i = 0; i<T.size(); ++i)
+        std::cout << "T_2___"<< T[i].first<< std::endl;*/
 
    // std::cout << "FIN KRUSKAL" << std::endl;
 }
@@ -221,4 +249,20 @@ int Graphe::getOrdre()
 Graphe::~Graphe()
 {
     //dtor
+}
+
+
+
+bool triArete(std::vector<std::pair<int, arete>> v_tri)
+{
+    for (size_t t = 0; t<v_tri.size(); ++t)
+    {
+        if (v_tri[t].first > v_tri[t+1].first)
+            return 0;
+
+        else
+            return 1;
+    }
+
+    return 0;
 }
