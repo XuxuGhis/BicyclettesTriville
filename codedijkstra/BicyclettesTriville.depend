@@ -1,0 +1,185 @@
+# depslib dependency file v1.0
+1555366090 source:c:\users\ghislaine\desktop\bicyclettestriville\main.cpp
+	"Graphe.h"
+
+1555366367 source:c:\users\ghislaine\desktop\bicyclettestriville\arete.cpp
+	"Arete.h"
+
+1555365243 source:c:\users\ghislaine\desktop\bicyclettestriville\sommet.cpp
+	"Sommet.h"
+
+1555367437 source:c:\users\ghislaine\desktop\bicyclettestriville\graphe.cpp
+	"Graphe.h"
+
+1555366452 c:\users\ghislaine\desktop\bicyclettestriville\arete.h
+	"Sommet.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1555365278 c:\users\ghislaine\desktop\bicyclettestriville\sommet.h
+	<vector>
+	<string>
+	<iostream>
+
+1555366090 c:\users\ghislaine\desktop\bicyclettestriville\graphe.h
+	"Sommet.h"
+	"Arete.h"
+	<unordered_map>
+	<string>
+	<queue>
+	<iostream>
+
+1555598754 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\graphe.cpp
+	"Graphe.h"
+	"Sommet.h"
+	<stdlib.h>
+
+1555597167 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\graphe.h
+	"Sommet.h"
+	"Arete.h"
+	"svgfile.h"
+	<unordered_map>
+	<string>
+	<queue>
+	<algorithm>
+	<iostream>
+
+1555502441 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\sommet.h
+	<vector>
+	<string>
+	<iostream>
+	"svgfile.h"
+
+1555597167 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\arete.h
+	"Sommet.h"
+	<iostream>
+	<fstream>
+	<string>
+	"Sommet.h"
+	"svgfile.h"
+
+1555605476 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\main.cpp
+	"Nuage.h"
+
+1555596539 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\sommet.cpp
+	"Sommet.h"
+
+1555597207 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\arete.cpp
+	"Arete.h"
+
+1555502441 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\svgfile.cpp
+	"svgfile.h"
+	<iostream>
+	<sstream>
+	<fstream>
+
+1555502441 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\svgfile.h
+	<string>
+	<fstream>
+	<set>
+
+1555410981 source:c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\arete.cpp
+	"Arete.h"
+
+1555410981 c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\arete.h
+	"Sommet.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1555404844 c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\sommet.h
+	<vector>
+	<string>
+	<iostream>
+
+1555411461 source:c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\graphe.cpp
+	"Graphe.h"
+	"Sommet.h"
+
+1555411255 c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\graphe.h
+	"Sommet.h"
+	"Arete.h"
+	"svgfile.h"
+	<unordered_map>
+	<string>
+	<queue>
+	<iostream>
+
+1555404844 c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\svgfile.h
+	<string>
+	<fstream>
+	<set>
+
+1555407653 source:c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\main.cpp
+	"Graphe.h"
+
+1555411780 source:c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\sommet.cpp
+	"Sommet.h"
+
+1555404844 source:c:\users\clemence bourgat\bicyclettestriville\bicyclettestriville\svgfile.cpp
+	"svgfile.h"
+	<iostream>
+	<sstream>
+	<fstream>
+
+1555605433 c:\users\ghislaine\bicyclettestriville\bicyclettestriville\nuage.h
+	"Graphe.h"
+	<vector>
+	<algorithm>
+
+1555605930 source:c:\users\ghislaine\bicyclettestriville\bicyclettestriville\nuage.cpp
+	"Nuage.h"
+
+1555607234 source:c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\arete.cpp
+	"Arete.h"
+
+1555607234 c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\arete.h
+	"Sommet.h"
+	<iostream>
+	<fstream>
+	<string>
+	"Sommet.h"
+	"svgfile.h"
+
+1555607235 c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\sommet.h
+	<vector>
+	<string>
+	<iostream>
+	"svgfile.h"
+
+1555607235 c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\svgfile.h
+	<string>
+	<fstream>
+	<set>
+
+1555607235 source:c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\main.cpp
+	"Nuage.h"
+
+1555607235 c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\nuage.h
+	"Graphe.h"
+	<vector>
+	<algorithm>
+
+1555619940 c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\graphe.h
+	"Sommet.h"
+	"Arete.h"
+	"svgfile.h"
+	<unordered_map>
+	<string>
+	<queue>
+	<algorithm>
+	<iostream>
+
+1555607235 source:c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\nuage.cpp
+	"Nuage.h"
+
+1555607235 source:c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\sommet.cpp
+	"Sommet.h"
+
+1555607235 source:c:\users\seconde chance\downloads\creation_de_graphes\bicyclettestriville\svgfile.cpp
+	"svgfile.h"
+	<iostream>
+	<sstream>
+	<fstream>
+
