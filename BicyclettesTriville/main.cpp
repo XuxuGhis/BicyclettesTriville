@@ -23,6 +23,7 @@ int main()
     Nuage n(&g);
     //n.Possibilites();
     n.toutesPossibilites();
+    n.supPossibilte();
     n.pareto(svgout3);
 
 

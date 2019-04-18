@@ -20,20 +20,18 @@ void Nuage::test()
 }
 
 
-
-
 void Nuage::toutesPossibilites ()
  {
 
-    std::vector<Arete* > vaV;
+    std::vector<Arete*> va;
 
     std::vector<Sommet* > vs; ///On recupere les sommets du graphe original
     ///toutes les combinaisons possibles : c-a-d 2^nbdaretes
     int k = m_vg[0]->getTaille(); ///NOMBRE DARETE
 
-    std::vector<bool> vect_tmp(k,true);
+   // std::vector<bool> vect_tmp(k,true);
 
-    vaV.clear();
+    va.clear();
     vs.clear();
 
     for(int i = 0; i<k; i++)
@@ -53,29 +51,79 @@ void Nuage::toutesPossibilites ()
 
                 if (vect[n]== 1)
                 {
-                    vaV.push_back(m_vg[0]->getAindice(n));
+
+                    va.push_back(m_vg[0]->getAindice(n));
                     std::cout<<"val A* "<<m_vg[0]->getAindice(n) <<std::endl;
+                    std::cout<<"Coucou"<<std::endl;
+
+                    //std::cout<<"vectA111 :"<< va[n] <<std::endl;
                 }
                 else if (vect[n]==0)
                 {
-                    /*Arete* i = nullptr;
-                    vaV.push_back(i);*/
+                    Arete* i = nullptr;
+                    va.push_back(i);
                     std::cout<<"val nullptr "<<i<<std::endl;
+                    std::cout<<"Coucou 2"<< vs[n] <<std::endl;
                 }
 
                 std::cout<<"vect "<< n << " = "<< vect[n]<<std::endl;
-                std::cout<<"vectA "<< vaV[n] <<std::endl;
-                std::cout<<"vectS "<< vs[n] <<std::endl;
+                std::cout<<"vectA :"<< va[n] <<std::endl;
+                std::cout<<"vectS :"<< vs[n] <<std::endl;
+
             }
-           // new Sommet{id,x,y}
-         /*   Graphe g {va, vs};
-            m_vg.push_back(&g);*/
+            // new Sommet{id,x,y}
+            //Graphe g {vaV, vs};
+           // m_vg.push_back(&g);
 
             //std::cout <<"size"<< va_selec.size()<< std::endl;
             std::cout << std::endl;
          }while(std::next_permutation(vect.begin(),vect.end()));
     }
  }
+
+void Nuage::supPossibilte()
+{
+    int n = m_vg[0]->getOrdre(); /// NOMBRE DE SOMMET
+    int k = m_vg[0]->getTaille(); ///NOMBRE DARETE
+    for(int i = n-4; i<k;i++)
+    {
+            ///affiche toutes les combinaisons avec nbsommets-1 aretes mais pas forcement couvrantes : c-a-d pas forcement tous les sommets
+        std::cout<<"toutes les combinaisons connexes mais pas forcement couvrantes sont :"<<std::endl;
+        for(int i = n-1; i<k-1;i++){ ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
+            std::vector<bool> vect(k,true);
+            for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
+                vect[j] = false;
+            do{
+                for (auto it=vect.begin(); it!=vect.end(); it++)
+                {
+                    std::cout<<*it;
+                }
+                std::cout << std::endl;
+             }while(std::next_permutation(vect.begin(),vect.end()));
+        }
+        std::cout<<std::endl; //A SUPPRIMER !!!!
+
+        ///maintenant il faut verifier celles qui sont connexes et les eliminer de ces combinaisons
+        std::cout<<"l espace de recherche est : "<<std::endl;
+        for(int i = n-1; i<k-1;i++)
+        { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
+            std::vector<bool> vect(k,true);
+            for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
+                vect[j] = false;
+            do{
+                for (auto it=vect.begin(); it!=vect.end(); it++)
+                {
+                    std::cout<<*it;
+                }
+                std::cout << std::endl;
+             }while(std::next_permutation(vect.begin(),vect.end()));
+
+        }
+
+
+    }
+}
+
 
 
 void Nuage::Possibilites ()

@@ -2,8 +2,17 @@
 #include "Sommet.h"
 #include <stdlib.h>
 
-Graphe::Graphe(std::vector<Arete* > va, std::vector<Sommet* > vs):m_a{va},m_s{vs}
-{ }
+Graphe::Graphe(std::vector<Arete* > va, std::vector<Sommet* > vs)
+{
+    for(int i =1; i<m_taille; ++i)
+        m_a.push_back(va[i]);
+
+    for(int n =1; n<m_ordre; ++n)
+        m_s.push_back(vs[n]);
+
+}
+
+
 
 Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 {
@@ -250,45 +259,6 @@ void Graphe::afficher()
         std::cout << std::endl;
     }
 }
-/*
-std::vector<Arete* > Graphe::toutesPossibilites ()
- {
-
-   std::vector<Arete* > va_selec;
-    ///affiche toutes les combinaisons possibles : c-a-d 2^nbdaretes
-    //std::cout<<"toutes les combinaisons possibles sont :"<<std::endl;
-   // int n = m_ordre; /// NOMBRE DE SOMMET
-    int k = m_taille; ///NOMBRE DARETE
-    //std::vector<bool> vect(k,true);
-    for(int i = 0; i<k; i++)
-    {
-        ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
-        std::vector<bool> vect(k,true);
-
-        for(int j = 0; j< k-i;j++)
-        {
-            vect[j] = false;///J = LARRETE QUON ENLEVE MAINTENANT LA
-        }
-
-        do{
-            for (auto it=vect.begin(); it!=vect.end(); it++)
-            {
-                std::cout <<*it;
-                if (*it)
-                {
-                    va_selec.push_back(m_a[i]);
-                    //std::cout<<"id"<<m_a[i]->getIdArete()<<std::endl;
-                }
-                else if (!*it)
-                    va_selec.push_back(nullptr);
-            }
-            //std::cout <<"size"<< va_selec.size()<< std::endl;
-            std::cout << std::endl;
-         }while(std::next_permutation(vect.begin(),vect.end()));
-    }
-    return va_selec;
- }
- */
 
 
 
@@ -317,10 +287,8 @@ void Graphe::toutesPossibilites ()
         for (auto it=vect.begin(); it!=vect.end(); it++)
                 std::cout<<"vect 0 "<< vect[0]<<std::endl;*/
 
-
             for (int n=0; n<m_taille; ++n)
             {
-
                 std::cout<<"vect "<< n << vect[n]<<std::endl;
                 //std::cout<<"vect "<< n <<std::endl;
             }
@@ -353,7 +321,7 @@ void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
     fichiersvg.addLine(100,50,100,400,couleur);
     fichiersvg.addLine(100,400,400,400,couleur);
    // fichiersvg.addDisk(m_p1, m_p2, 10, couleur);
-   fichiersvg.addDisk(m_p1, m_p2, 5, couleur);
+   fichiersvg.addDisk(m_p1+400, m_p2+100, 5, couleur);
    fichiersvg.addText(400,420 , "poids 1", couleur);
    fichiersvg.addText(20,50 , "poids 2", couleur);
 

@@ -13,6 +13,7 @@ class Nuage
         void graphique();
         void Possibilites();
         void toutesPossibilites();
+        void supPossibilte();
         void afficherNuage();
         void test();
         void pareto(Svgfile& ficsvg);
@@ -23,6 +24,7 @@ class Nuage
     private:
 
         std::vector<Graphe*> m_vg;
+        std::vector<Graphe*> m_possibilite;
 
 };
 
