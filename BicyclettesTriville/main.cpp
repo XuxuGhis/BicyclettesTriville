@@ -14,11 +14,12 @@ int main()
     Svgfile svgout3("output3.svg");
 
     std::string nomFich_1 = "broadway.txt";
-    std::string nomFich_2= "broadway_weights_1.txt";
+    std::string nomFich_2= "broadway_weights_0.txt";
 
 
     Graphe g{nomFich_1,nomFich_2};
 
+    std::cout<<"somme du poid g"<<g.sommePoids(1)<<std::endl;
 
     Nuage n(&g);
     //n.Possibilites();

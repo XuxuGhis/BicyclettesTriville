@@ -27,7 +27,7 @@ void Nuage::bruteForce(Svgfile& ficsvg)
     va.clear();
     vs.clear();
 
-    m_possibilite.push_back(m_vg[0]);
+   // m_possibilite.push_back(m_vg[0]);
 
     int k = m_vg[0]->getTaille(); ///NOMBRE DARETE
 
@@ -47,13 +47,13 @@ void Nuage::bruteForce(Svgfile& ficsvg)
             {
               //  std::cout<<*it;
             }
-            std::cout << std::endl;
+            //std::cout << std::endl;
          }while(std::next_permutation(vect.begin(),vect.end()));
     }
-    std::cout<<std::endl;
+   // std::cout<<std::endl;
 
     ///affiche toutes les combinaisons avec nbsommets-1 aretes mais pas forcement couvrantes : c-a-d pas forcement tous les sommets
-    std::cout<<"toutes les combinaisons connexes mais pas forcement couvrantes sont :"<<std::endl;
+   // std::cout<<"toutes les combinaisons connexes mais pas forcement couvrantes sont :"<<std::endl;
     for(int i = n-1; i<k-1;i++)
     { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
         std::vector<bool> vect(k,true);
@@ -64,13 +64,12 @@ void Nuage::bruteForce(Svgfile& ficsvg)
             {
                 //std::cout<<*it;
             }
-            std::cout << std::endl;
+            //std::cout << std::endl;
          }while(std::next_permutation(vect.begin(),vect.end()));
     }
-    std::cout<<std::endl; //A SUPPRIMER !!!!
+   // std::cout<<std::endl; //A SUPPRIMER !!!!
 
     ///maintenant il faut verifier celles qui sont connexes et les eliminer de ces combinaisons
-    std::cout<<"l espace de recherche est : "<<std::endl;
     int nb_po = 0;
     for(int i = n-1; i<k-1;i++)
     { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
@@ -79,48 +78,66 @@ void Nuage::bruteForce(Svgfile& ficsvg)
             vect[j] = false;
 
         do{
-            int nb = 0;
 
+            int nb = 0;
             for (auto it=vect.begin(); it!=vect.end(); it++)
             {
 
                     std::cout<<*it;
                     if (*it)
                     {
-                        std::cout << "nb"<<nb<<std::endl;
-                        va.push_back(m_vg[0]->getAindice(nb));
+                        std::cout << "nARERT_UN"<<nb;
+                      //  std::cout << va[*it]<<std::endl;
+                      std::cout<<"ca vaut UN"<<std::endl;
+                       va.push_back(m_vg[0]->getAindice(nb));
+                       for (int i=0; i<va.size(); ++i) std::cout<<"    va   "<<va[i];
+                       // std::cout<<"id arr1111"<<m_vg[0]->getAindice(nb)->getIdArete()<<std::endl;
+
+
+
                     }
-
-
-
-
-                    //Graphe g0{va, m_vg[0]->getS()};
-                   // m_possibilite.push_back(&g0);
-
-                   //void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
-
-                    /*double p1 = g0.sommePoids(1);
-                    double p2 = g0.sommePoids(2);*/
-
-//                    g0.dessinerGraphePareto(ficsvg, p1, p2);
-
+                    else std::cout<<"ca vaut ZERO"<<std::endl;
 
                     ++nb;
-            }
-            m_possibilite.push_back(new Graphe{va, m_vg[0]->getS()});
-            std::cout<<"size de po"<<m_possibilite.size()<<std::endl;
-            ++nb_po;
 
+
+            }
+            ++nb_po;
+                         //   std::cout<<"AAA"<<std::endl;
+               std::cout<<std::endl;
+                std::cout<<std::endl;
+                m_possibilite.push_back(new Graphe{va, m_vg[0]->getS()});
+
+
+              /*  double p1 = 0;
+                p1 = (new Graphe  {va, m_vg[0]->getS()})->sommePoids(1);
+
+                double p2 =0;
+                p2 = (new Graphe  {va, m_vg[0]->getS()})->sommePoids(2);
+
+                (new Graphe  {va, m_vg[0]->getS()})->dessinerGraphePareto(ficsvg, p1, p2);
+
+                //m_possibilite.push_back(&g);*/
 
          }while(std::next_permutation(vect.begin(),vect.end()));
 
-             std::cout<<"nb_po"<< nb_po<<std::endl;
+             //std::cout<<"nb_po"<< nb_po<<std::endl;
 
     for (int i =0; i<nb_po; ++i)
         {
-            double p1 = m_possibilite[i]->sommePoids(1);
-            double p2 = m_possibilite[i]->sommePoids(2);
+            double p1 = 0;
+            p1 = m_possibilite[i]->sommePoids(1);
+            std::cout<<"poi"<<p1<<std::endl;
+            std::cout<<"TAILLE"<<m_possibilite[i]->getTaille()<<std::endl;
+            std::cout<<"id arr"<<m_possibilite[i]->getAindice(i)->getIdArete()<<std::endl;
+            double p2 =0;
+            p2 = m_possibilite[i]->sommePoids(2);
+            std::cout<<"poi"<<p2<<std::endl;
             m_possibilite[i]->dessinerGraphePareto(ficsvg, p1, p2);
+
+            std::cout<<std::endl;
+            std::cout<<std::endl;
+            std::cout<<std::endl;
         }
 
 
