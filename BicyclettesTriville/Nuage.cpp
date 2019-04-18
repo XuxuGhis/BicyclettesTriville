@@ -71,38 +71,67 @@ void Nuage::bruteForce(Svgfile& ficsvg)
 
     ///maintenant il faut verifier celles qui sont connexes et les eliminer de ces combinaisons
     std::cout<<"l espace de recherche est : "<<std::endl;
+    int nb_po = 0;
     for(int i = n-1; i<k-1;i++)
     { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
         std::vector<bool> vect(k,true);
         for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
             vect[j] = false;
+
         do{
             int nb = 0;
+
             for (auto it=vect.begin(); it!=vect.end(); it++)
             {
 
                     std::cout<<*it;
                     if (*it)
+                    {
                         std::cout << "nb"<<nb<<std::endl;
+                        va.push_back(m_vg[0]->getAindice(nb));
+                    }
 
-                    va.push_back(m_vg[0]->getAindice(nb));
 
-                    Graphe g0{va, m_vg[0]->getS()};
+
+
+                    //Graphe g0{va, m_vg[0]->getS()};
                    // m_possibilite.push_back(&g0);
+
                    //void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
 
-                       double p1 = g0.sommePoids(1);
-                       double p2 = g0.sommePoids(2);
+                    /*double p1 = g0.sommePoids(1);
+                    double p2 = g0.sommePoids(2);*/
 
+//                    g0.dessinerGraphePareto(ficsvg, p1, p2);
 
-                    g0.dessinerGraphePareto(ficsvg, p1, p2);
 
                     ++nb;
             }
+            m_possibilite.push_back(new Graphe{va, m_vg[0]->getS()});
+            std::cout<<"size de po"<<m_possibilite.size()<<std::endl;
+            ++nb_po;
+
 
          }while(std::next_permutation(vect.begin(),vect.end()));
 
+             std::cout<<"nb_po"<< nb_po<<std::endl;
+
+    for (int i =0; i<nb_po; ++i)
+        {
+            double p1 = m_possibilite[i]->sommePoids(1);
+            double p2 = m_possibilite[i]->sommePoids(2);
+            m_possibilite[i]->dessinerGraphePareto(ficsvg, p1, p2);
+        }
+
+
     }
+    /*
+    for(auto it : m_possibilite)
+        it->dessinerGraphePareto(ficsvg, it->sommePoids(1), it->sommePoids(2));*/
+
+
+
+
 
 }
 

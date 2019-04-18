@@ -14,7 +14,7 @@ int main()
     Svgfile svgout3("output3.svg");
 
     std::string nomFich_1 = "broadway.txt";
-    std::string nomFich_2= "broadway_weights_0.txt";
+    std::string nomFich_2= "broadway_weights_1.txt";
 
 
     Graphe g{nomFich_1,nomFich_2};
