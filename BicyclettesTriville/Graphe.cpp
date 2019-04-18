@@ -2,6 +2,8 @@
 #include "Sommet.h"
 #include <stdlib.h>
 
+Graphe::Graphe(std::vector<Arete* > va, std::vector<Sommet* > vs):m_a{va},m_s{vs}
+{ }
 
 Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 {
@@ -27,6 +29,7 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
     ifs >> taille;
     if ( ifs.fail() )
         throw std::runtime_error("Probleme lecture taille du graphe");
+    m_taille = taille;
     std::string id_voisin;
 
 
@@ -48,9 +51,6 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 
     for (int i=0; i<taille; ++i)
     {
-
-
-
 
         int id2;
         float p1;
@@ -85,6 +85,12 @@ Graphe::Graphe(std::string nomFichier, std::string nomFic2)
 
 }
 
+std::vector<Arete* > Graphe::choisirArete(std::vector<bool> vect)
+{
+    std::vector<Arete* > v_choisi;
+
+    return v_choisi;
+}
 
 void Graphe::afficher ()const
 {
@@ -168,6 +174,24 @@ void Graphe::union_set(int u, int v)
     parent[u] = parent[v];
 }
 
+double Graphe::sommePoids(int choix_p)
+{
+    int p ;
+    int somme_pg;
+
+    for(auto it2 : m_a)
+    {
+        if (choix_p == 1)
+            p = it2->getP1();
+
+        else if (choix_p == 2)
+            p = it2->getP2();
+
+        somme_pg = somme_pg+p;
+    }
+
+    return somme_pg;
+}
 
 void Graphe::kruskal(int choix_p)
 {
@@ -183,7 +207,6 @@ void Graphe::kruskal(int choix_p)
             p = it2->getP2();
 
       //  std::cout << "m_p__-"<< p<< std::endl;
-
 
         G.push_back(make_pair(p, arete(it2->getIdArete_s1(), it2->getIdArete_s2())));
 
@@ -219,7 +242,7 @@ void Graphe::kruskal(int choix_p)
 }
 void Graphe::afficher()
 {
-    std::cout << "Arete :" << " Poids" << std::endl;
+   // std::cout << "Arete :" << " Poids" << std::endl;
     for (int unsigned i = 0; i < T.size(); i++)
     {
         std::cout << T[i].second.first << " - " << T[i].second.second << " : "
@@ -227,14 +250,150 @@ void Graphe::afficher()
         std::cout << std::endl;
     }
 }
+/*
+std::vector<Arete* > Graphe::toutesPossibilites ()
+ {
 
-//https://www.programiz.com/dsa/kruskal-algorithm
+   std::vector<Arete* > va_selec;
+    ///affiche toutes les combinaisons possibles : c-a-d 2^nbdaretes
+    //std::cout<<"toutes les combinaisons possibles sont :"<<std::endl;
+   // int n = m_ordre; /// NOMBRE DE SOMMET
+    int k = m_taille; ///NOMBRE DARETE
+    //std::vector<bool> vect(k,true);
+    for(int i = 0; i<k; i++)
+    {
+        ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
+        std::vector<bool> vect(k,true);
+
+        for(int j = 0; j< k-i;j++)
+        {
+            vect[j] = false;///J = LARRETE QUON ENLEVE MAINTENANT LA
+        }
+
+        do{
+            for (auto it=vect.begin(); it!=vect.end(); it++)
+            {
+                std::cout <<*it;
+                if (*it)
+                {
+                    va_selec.push_back(m_a[i]);
+                    //std::cout<<"id"<<m_a[i]->getIdArete()<<std::endl;
+                }
+                else if (!*it)
+                    va_selec.push_back(nullptr);
+            }
+            //std::cout <<"size"<< va_selec.size()<< std::endl;
+            std::cout << std::endl;
+         }while(std::next_permutation(vect.begin(),vect.end()));
+    }
+    return va_selec;
+ }
+ */
+
+
+
+void Graphe::toutesPossibilites ()
+ {
+
+   std::vector<Arete* > va_selec;
+    ///affiche toutes les combinaisons possibles : c-a-d 2^nbdaretes
+    //std::cout<<"toutes les combinaisons possibles sont :"<<std::endl;
+   // int n = m_ordre; /// NOMBRE DE SOMMET
+    int k = m_taille; ///NOMBRE DARETE
+    std::vector<bool> vect_tmp(k,true);
+    for(int i = 0; i<k; i++)
+    {
+        ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
+        std::vector<bool> vect(k,true);
+
+        for(int j = 0; j< k-i;j++)
+        {
+            vect[j] = false;///J = LARRETE QUON ENLEVE MAINTENANT LA
+        }
+
+        do{
+        /*for (auto it=vect.begin(); it!=vect.end(); it++)
+                std::cout <<*it;
+        for (auto it=vect.begin(); it!=vect.end(); it++)
+                std::cout<<"vect 0 "<< vect[0]<<std::endl;*/
+
+
+            for (int n=0; n<m_taille; ++n)
+            {
+
+                std::cout<<"vect "<< n << vect[n]<<std::endl;
+                //std::cout<<"vect "<< n <<std::endl;
+            }
+
+
+            //std::cout <<"size"<< va_selec.size()<< std::endl;
+            std::cout << std::endl;
+         }while(std::next_permutation(vect.begin(),vect.end()));
+
+         vect_tmp = vect;
+      /*  for(auto it2 : vect_tmp)
+            std::cout<<"vect temp "<< it2<<std::endl;*/
+    }
+
+/*
+    for(auto it2 : vect_tmp)
+        std::cout<<"vect temp "<< it2<<std::endl;*/
+
+
+ }
+
+
+
+
+
+
+void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
+{
+    std::string couleur = "rgb(0, 0, 0)";
+    fichiersvg.addLine(100,50,100,400,couleur);
+    fichiersvg.addLine(100,400,400,400,couleur);
+   // fichiersvg.addDisk(m_p1, m_p2, 10, couleur);
+   fichiersvg.addDisk(m_p1, m_p2, 5, couleur);
+   fichiersvg.addText(400,420 , "poids 1", couleur);
+   fichiersvg.addText(20,50 , "poids 2", couleur);
+
+}
+
+
+
+
+
+
 
 int Graphe::getOrdre()
 {
     return m_ordre;
 }
 
+int Graphe::getTaille()
+{
+    return m_taille;
+}
+
+Arete*  Graphe::getAindice(int i)
+{
+    return m_a[i];
+}
+
+Sommet*  Graphe::getSindice(int i)
+{
+    return m_s[i];
+}
+
+std::vector<Sommet* > Graphe::getS()
+{
+    return m_s;
+}
+
+std::vector<Arete* > Graphe::getA()
+{
+    return m_a;
+}
 
 Graphe::~Graphe()
 {
