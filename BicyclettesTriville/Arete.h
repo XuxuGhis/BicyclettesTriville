@@ -16,7 +16,7 @@ class Arete
         Arete (int id, double p1, double p2, int idS1, int idS2);
         void afficherData() const;
         void dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int selec);
-        void dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int id1, int id2, int decalage);
+        void dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int id1, int id2, int decalage, int choix_p);
 
        // bool triArete(std::vector<std::pair<int, arete>> v_tri);
         int getIdArete();

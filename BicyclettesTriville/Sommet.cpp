@@ -49,6 +49,7 @@ void Sommet::dessinerSommet(Svgfile& fichiersvg, int decalage)
 
 }
 
+
 double Sommet::getX()
 {
     return m_x;

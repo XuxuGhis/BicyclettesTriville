@@ -38,11 +38,11 @@
 <circle cx="700" cy="200" r="3" fill="rgb(200, 0, 0)" />
 <text x="707.7" y="197" fill="rgb(200, 0, 0)" >3</text>
 <line x1="600" y1="100" x2="600" y2="200" stroke="black" />
-<text x="600" y="146.3" fill="rgb(0, 119, 179)" >0</text>
+<text x="600" y="146.3" fill="rgb(0, 119, 179)" >8</text>
 <line x1="700" y1="100" x2="600" y2="200" stroke="black" />
-<text x="650" y="146.3" fill="rgb(0, 119, 179)" >1</text>
+<text x="650" y="146.3" fill="rgb(0, 119, 179)" >2</text>
 <line x1="600" y1="200" x2="700" y2="200" stroke="black" />
-<text x="650" y="196.3" fill="rgb(0, 119, 179)" >2</text>
+<text x="650" y="196.3" fill="rgb(0, 119, 179)" >3</text>
   
 
 <defs>

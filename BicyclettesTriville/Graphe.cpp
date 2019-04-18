@@ -4,10 +4,13 @@
 
 Graphe::Graphe(std::vector<Arete* > va, std::vector<Sommet* > vs)
 {
-    for(int i =1; i<m_taille; ++i)
+    m_taille = va.size();
+    m_ordre = vs.size();
+
+    for(int i =0; i<m_taille; ++i)
         m_a.push_back(va[i]);
 
-    for(int n =1; n<m_ordre; ++n)
+    for(int n =0; n<m_ordre; ++n)
         m_s.push_back(vs[n]);
 
 }
@@ -141,7 +144,7 @@ void Graphe::dessinerGraphe(Svgfile& fichiersvg)
 }
 
 
-void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage)
+void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage, int choix_p)
 {
 
 
@@ -157,7 +160,7 @@ void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage)
 
     for (int unsigned i = 0; i < T.size(); i++)
     {
-        m_a[i]->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second, decalage);
+        m_a[i]->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second, decalage, choix_p);
 
        // std::cout<<"sssssssssssssssssssss !!" << T[i].second.first <<std::endl;
 
@@ -321,7 +324,7 @@ void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
     fichiersvg.addLine(100,50,100,400,couleur);
     fichiersvg.addLine(100,400,400,400,couleur);
    // fichiersvg.addDisk(m_p1, m_p2, 10, couleur);
-   fichiersvg.addDisk(m_p1+400, m_p2+100, 5, couleur);
+   fichiersvg.addDisk(m_p1+400, m_p2+100, 3, couleur);
    fichiersvg.addText(400,420 , "poids 1", couleur);
    fichiersvg.addText(20,50 , "poids 2", couleur);
 

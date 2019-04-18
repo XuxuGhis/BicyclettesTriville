@@ -22,9 +22,11 @@ int main()
 
     Nuage n(&g);
     //n.Possibilites();
-    n.toutesPossibilites();
-    n.supPossibilte();
-    n.pareto(svgout3);
+   // n.toutesPossibilites();
+   // n.supPossibilte();
+    n.bruteForce(svgout3);
+
+    //n.pareto(svgout3);
 
 
 
@@ -39,6 +41,8 @@ int main()
 
     g.dessinerGraphe(svgout2);
     n.Kruskal(2, svgout2, nomFich_1, nomFich_2);
+
+
 
 
     }

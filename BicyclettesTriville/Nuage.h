@@ -12,6 +12,8 @@ class Nuage
         void Kruskal(int p, Svgfile& fichier_svg, std::string fichier_1, std::string fichier_2);
         void graphique();
         void Possibilites();
+        //void bruteForce();
+        void bruteForce(Svgfile& ficsvg);
         void toutesPossibilites();
         void supPossibilte();
         void afficherNuage();

@@ -23,7 +23,7 @@ class Graphe
         Graphe(std::vector<Arete* > va, std::vector<Sommet* > vs);
 
         void dessinerGraphe(Svgfile& fichiersvg);
-        void dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage);
+        void dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage,int choix_p);
         void afficher() const;
 
        // std::vector<Arete* >toutesPossibilites ();
