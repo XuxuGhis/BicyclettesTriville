@@ -36,6 +36,9 @@ class Graphe
         void kruskal(int choix_p);
         void afficher();
 
+        void Dijkstra(int Sommetdepart);
+
+
         void pareto(Svgfile& fichiersvg,int m_p1,int m_p2);
         void dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2);
         std::vector<Arete* > choisirArete(std::vector<bool> vect);

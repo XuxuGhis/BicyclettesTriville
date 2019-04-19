@@ -320,15 +320,106 @@ void Graphe::toutesPossibilites ()
 
 void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
 {
-    std::string couleur = "rgb(0, 0, 0)";
-    fichiersvg.addLine(100,50,100,400,couleur);
-    fichiersvg.addLine(100,400,400,400,couleur);
+
+
+    std::string couleur = "rgb(255, 0, 0)";
+    /*fichiersvg.addLine(100,50,100,400,couleur);
+    fichiersvg.addLine(100,400,400,400,couleur);*/
    // fichiersvg.addDisk(m_p1, m_p2, 10, couleur);
-   fichiersvg.addDisk(m_p1+400, m_p2+100, 3, couleur);
-   fichiersvg.addText(400,420 , "poids 1", couleur);
-   fichiersvg.addText(20,50 , "poids 2", couleur);
+   fichiersvg.addDisk(m_p1, m_p2, 1, couleur);
+
 
 }
+
+
+
+auto comp = [](const std::pair<int, int> &a, const std::pair<int, int> &b) {return a.second > b.second; };
+
+void Graphe::Dijkstra(int Sommetdepart)
+ {
+
+     int NbSommet;
+     NbSommet=m_ordre;
+
+
+
+      std::vector<std::vector<std::pair<int, int>>> G(NbSommet); // vecteur de graphe avec le nbdesommet
+      int sommet1, sommet2, poids;                                                                           // chaque sommet est relié à un autre par une arete ayant un poids
+      for (int i = 0; i <m_taille-1; ++i)
+        {
+
+        sommet1= m_a[i]->getIdArete_s1();
+        sommet2= m_a[i]->getIdArete_s2();
+        poids = m_a[i]->getP2();
+
+        G[sommet1].push_back(std::make_pair(sommet2, poids));                       // chaque paire contient : first=indice du sommet conncecté au sommet1, second=poids de sommet1 à sommet2
+        G[sommet2].push_back(std::make_pair(sommet1, poids));
+
+        }
+       // for (size_t n =0; n<m_taille-1; ++n)
+
+
+
+      std::vector<int> Distances(NbSommet, std::numeric_limits<int>::max());         // Distances est un vecteur contenant nbsommet cases. Toutes les cases sont initialisées avec max().
+                                                                                    // ca j'ai pas trop compris pourquoi max
+                                                                                  // Distances[i] est la distance du sommetdepart jusqu'au sommet d'indice i
+
+      Distances[Sommetdepart] = 0;                                                    // Distance initialisée à 0
+
+      std::vector<int> Parents(NbSommet, -1);                                        // Parents est un vecteur avec nbsommets cases. Toutes initialisées à -1 (pourquoi? jsp)
+
+                                                                                    // Priority queue contient des paires et utilise une fonction de comparaison spécifique
+                                                                                    // A cause du comparateur on doit mettre 3 paramètres
+                                                                                    // Le comparateur fait en sort que le sommet le plus proche est celui au dessus de la queue
+                                                                                    // chaque paire est composée de l'indice du sommet et de la distance au sommetdepart
+      std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, decltype(comp)> Q(comp);
+      Q.push(std::make_pair(Sommetdepart, 0));                                              // On initialise la priority queue avec le sommet de départ
+
+      while (!Q.empty())
+        {                                                          // Dijkstra
+        int sommet2 = Q.top().first;                                                      // On recupère l'indice du sommet le plus proche
+        int poids = Q.top().second;                                                     // on recupère le poids
+        Q.pop();
+
+        if (poids <= Distances[sommet2])
+            {
+
+          for (const auto& i : G[sommet2])
+            {                                                                       // sommet2 est l'indice du sommet le plus proche
+            auto sommet2_2 = i.first;                                                      // Pour chaque sommet connecté à sommet2
+            auto poids2 = i.second;
+
+            if (Distances[sommet2] + poids2 < Distances[sommet2_2])
+            {                                                                                     // Si la distance du sommetdepart jusqu'au sommet2_2 à travers sommet2 est plus courteque la distance actuelle de sommetdepart à sommet2
+              Distances[sommet2_2] = Distances[sommet2] + poids2;                                // alors on met à jour la distance du sommetdepart à sommet2_2 et parent[sommet2_2]
+              Parents[sommet2_2] = sommet2;
+              Q.push(std::make_pair(sommet2_2, Distances[sommet2_2]));
+            }
+           }
+        }
+      }
+
+      for (auto i = 0; i != NbSommet; ++i)
+      {                                                                                      //on affiche
+        std::cout << "\n Sommet  " << Sommetdepart << " au Sommet " << i << " Poids " << Distances[i] << std::endl;
+
+        std::cout << i;
+        for (auto p = Parents[i]; p != -1; p = Parents[p])
+          std::cout << " <- " << p;
+        std::cout << std::endl;
+
+      }
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,3 +477,5 @@ bool triArete(std::vector<std::pair<int, arete>> v_tri)
 
     return 0;
 }
+
+

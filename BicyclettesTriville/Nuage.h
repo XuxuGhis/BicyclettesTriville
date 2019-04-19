@@ -28,6 +28,8 @@ class Nuage
         std::vector<Graphe*> m_vg;
         std::vector<int> m_vg_poids;
         std::vector<Graphe*> m_possibilite;
+        std::vector<int> m_sommeP1;
+        std::vector<int> m_sommeP2;
 
 };
 

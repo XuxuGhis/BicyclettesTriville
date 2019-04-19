@@ -1,54 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  width="1510" height="780">
 
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="8.19042e+006" cy="125" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="436" cy="143" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="447" cy="163" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="460" cy="178" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="482" cy="196" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="499" cy="216" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="518" cy="231" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="534" cy="250" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="552" cy="264" r="3" fill="rgb(0, 0, 0)" />
-<text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
-<text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
-<line x1="100" y1="50" x2="100" y2="400" stroke="rgb(0, 0, 0)" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="rgb(0, 0, 0)" />
-<circle cx="565" cy="280" r="3" fill="rgb(0, 0, 0)" />
+<line x1="0" y1="0" x2="1510" y2="0" stroke="grey" />
+<text x="5" y="-5" fill="grey" >0</text>
+<line x1="0" y1="50" x2="1510" y2="50" stroke="grey" />
+<text x="5" y="45" fill="grey" >50</text>
+<line x1="0" y1="100" x2="1510" y2="100" stroke="grey" />
+<text x="5" y="95" fill="grey" >100</text>
+<line x1="0" y1="150" x2="1510" y2="150" stroke="grey" />
+<text x="5" y="145" fill="grey" >150</text>
+<line x1="0" y1="200" x2="1510" y2="200" stroke="grey" />
+<text x="5" y="195" fill="grey" >200</text>
+<line x1="0" y1="250" x2="1510" y2="250" stroke="grey" />
+<text x="5" y="245" fill="grey" >250</text>
+<line x1="0" y1="300" x2="1510" y2="300" stroke="grey" />
+<text x="5" y="295" fill="grey" >300</text>
+<line x1="0" y1="350" x2="1510" y2="350" stroke="grey" />
+<text x="5" y="345" fill="grey" >350</text>
+<line x1="0" y1="400" x2="1510" y2="400" stroke="grey" />
+<text x="5" y="395" fill="grey" >400</text>
+<line x1="0" y1="450" x2="1510" y2="450" stroke="grey" />
+<text x="5" y="445" fill="grey" >450</text>
+<line x1="0" y1="500" x2="1510" y2="500" stroke="grey" />
+<text x="5" y="495" fill="grey" >500</text>
+<line x1="0" y1="550" x2="1510" y2="550" stroke="grey" />
+<text x="5" y="545" fill="grey" >550</text>
+<line x1="0" y1="600" x2="1510" y2="600" stroke="grey" />
+<text x="5" y="595" fill="grey" >600</text>
+<line x1="0" y1="650" x2="1510" y2="650" stroke="grey" />
+<text x="5" y="645" fill="grey" >650</text>
+<line x1="0" y1="700" x2="1510" y2="700" stroke="grey" />
+<text x="5" y="695" fill="grey" >700</text>
+<line x1="0" y1="750" x2="1510" y2="750" stroke="grey" />
+<text x="5" y="745" fill="grey" >750</text>
+<line x1="0" y1="0" x2="0" y2="780" stroke="grey" />
+<text x="5" y="15" fill="grey" >0</text>
+<line x1="50" y1="0" x2="50" y2="780" stroke="grey" />
+<text x="55" y="15" fill="grey" >50</text>
+<line x1="100" y1="0" x2="100" y2="780" stroke="grey" />
+<text x="105" y="15" fill="grey" >100</text>
+<line x1="150" y1="0" x2="150" y2="780" stroke="grey" />
+<text x="155" y="15" fill="grey" >150</text>
+<line x1="200" y1="0" x2="200" y2="780" stroke="grey" />
+<text x="205" y="15" fill="grey" >200</text>
+<line x1="250" y1="0" x2="250" y2="780" stroke="grey" />
+<text x="255" y="15" fill="grey" >250</text>
+<line x1="300" y1="0" x2="300" y2="780" stroke="grey" />
+<text x="305" y="15" fill="grey" >300</text>
+<line x1="350" y1="0" x2="350" y2="780" stroke="grey" />
+<text x="355" y="15" fill="grey" >350</text>
+<line x1="400" y1="0" x2="400" y2="780" stroke="grey" />
+<text x="405" y="15" fill="grey" >400</text>
+<line x1="450" y1="0" x2="450" y2="780" stroke="grey" />
+<text x="455" y="15" fill="grey" >450</text>
+<line x1="500" y1="0" x2="500" y2="780" stroke="grey" />
+<text x="505" y="15" fill="grey" >500</text>
+<line x1="550" y1="0" x2="550" y2="780" stroke="grey" />
+<text x="555" y="15" fill="grey" >550</text>
+<line x1="600" y1="0" x2="600" y2="780" stroke="grey" />
+<text x="605" y="15" fill="grey" >600</text>
+<line x1="650" y1="0" x2="650" y2="780" stroke="grey" />
+<text x="655" y="15" fill="grey" >650</text>
+<line x1="700" y1="0" x2="700" y2="780" stroke="grey" />
+<text x="705" y="15" fill="grey" >700</text>
+<line x1="750" y1="0" x2="750" y2="780" stroke="grey" />
+<text x="755" y="15" fill="grey" >750</text>
+<line x1="800" y1="0" x2="800" y2="780" stroke="grey" />
+<text x="805" y="15" fill="grey" >800</text>
+<line x1="850" y1="0" x2="850" y2="780" stroke="grey" />
+<text x="855" y="15" fill="grey" >850</text>
+<line x1="900" y1="0" x2="900" y2="780" stroke="grey" />
+<text x="905" y="15" fill="grey" >900</text>
+<line x1="950" y1="0" x2="950" y2="780" stroke="grey" />
+<text x="955" y="15" fill="grey" >950</text>
+<line x1="1000" y1="0" x2="1000" y2="780" stroke="grey" />
+<text x="1005" y="15" fill="grey" >1000</text>
+<line x1="1050" y1="0" x2="1050" y2="780" stroke="grey" />
+<text x="1055" y="15" fill="grey" >1050</text>
+<line x1="1100" y1="0" x2="1100" y2="780" stroke="grey" />
+<text x="1105" y="15" fill="grey" >1100</text>
+<line x1="1150" y1="0" x2="1150" y2="780" stroke="grey" />
+<text x="1155" y="15" fill="grey" >1150</text>
+<line x1="1200" y1="0" x2="1200" y2="780" stroke="grey" />
+<text x="1205" y="15" fill="grey" >1200</text>
+<line x1="1250" y1="0" x2="1250" y2="780" stroke="grey" />
+<text x="1255" y="15" fill="grey" >1250</text>
+<line x1="1300" y1="0" x2="1300" y2="780" stroke="grey" />
+<text x="1305" y="15" fill="grey" >1300</text>
+<line x1="1350" y1="0" x2="1350" y2="780" stroke="grey" />
+<text x="1355" y="15" fill="grey" >1350</text>
+<line x1="1400" y1="0" x2="1400" y2="780" stroke="grey" />
+<text x="1405" y="15" fill="grey" >1400</text>
+<line x1="1450" y1="0" x2="1450" y2="780" stroke="grey" />
+<text x="1455" y="15" fill="grey" >1450</text>
+<line x1="1500" y1="0" x2="1500" y2="780" stroke="grey" />
+<text x="1505" y="15" fill="grey" >1500</text>
+<circle cx="190" cy="170" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="180" cy="160" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="200" cy="110" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="150" cy="130" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="180" cy="220" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="200" cy="170" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="150" cy="190" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="190" cy="160" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="140" cy="180" r="1" fill="rgb(255, 0, 0)" />
+<circle cx="160" cy="130" r="1" fill="rgb(255, 0, 0)" />
 <text x="400" y="420" fill="rgb(0, 0, 0)" >poids 1</text>
 <text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
   

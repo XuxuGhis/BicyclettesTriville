@@ -9,9 +9,12 @@ int main()
 {
 
     {
+
+
     Svgfile svgout;
     Svgfile svgout2("output2.svg");
     Svgfile svgout3("output3.svg");
+    svgout3.addGrid();
 
     std::string nomFich_1 = "broadway.txt";
     std::string nomFich_2= "broadway_weights_0.txt";
@@ -22,14 +25,16 @@ int main()
     std::cout<<"somme du poid g"<<g.sommePoids(1)<<std::endl;
 
     Nuage n(&g);
-    //n.Possibilites();
-   // n.toutesPossibilites();
-   // n.supPossibilte();
     n.bruteForce(svgout3);
 
-    //n.pareto(svgout3);
+    n.pareto(svgout3);
 
 
+
+
+    std::string couleur = "rgb(0, 0, 0)";
+    svgout3.addText(400,420 , "poids 1", couleur);
+    svgout3.addText(20,50 , "poids 2", couleur);
 
 
 
