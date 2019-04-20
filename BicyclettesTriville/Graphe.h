@@ -36,11 +36,11 @@ class Graphe
         void kruskal(int choix_p);
         void afficher();
 
-        void Dijkstra(int Sommetdepart);
+        int Dijkstra(int Sommetdepart);
 
 
         void pareto(Svgfile& fichiersvg,int m_p1,int m_p2);
-        void dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2);
+        void dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2, std::string coul);
         std::vector<Arete* > choisirArete(std::vector<bool> vect);
         int getOrdre();
         int getTaille();
@@ -49,7 +49,7 @@ class Graphe
         Arete* getAindice(int i);
         Sommet* getSindice(int i);
         std::vector<Sommet* > getS();
-        double sommePoids(int choix_p);//Représente la somme total du poids 1 du graphe
+        double sommePoids(int choix_p);//Reprï¿½sente la somme total du poids 1 du graphe
 
         ~Graphe();
 

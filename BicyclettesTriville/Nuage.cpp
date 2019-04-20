@@ -14,10 +14,7 @@ void Nuage::Kruskal(int p, Svgfile& fichier_svg, std::string fichier_1, std::str
     m_vg[m_vg.size()-1]->dessinerGrapheKruskal(fichier_svg, 500, p);
 
 }
-void Nuage::test()
-{
-     //m_vg[0]->toutesPossibilites();
-}
+
 
 void Nuage::bruteForce(Svgfile& ficsvg)
 {
@@ -27,16 +24,9 @@ void Nuage::bruteForce(Svgfile& ficsvg)
     va.clear();
     vs.clear();
 
-   // m_possibilite.push_back(m_vg[0]);
-
     int k = m_vg[0]->getTaille(); ///NOMBRE DARETE
-
-
-
-    ///affiche toutes les combinaisons possibles : c-a-d 2^nbdaretes
     int n = m_vg[0]->getOrdre();/// NOMBRE DE SOMMET
-
-
+    ///affiche toutes les combinaisons possibles : c-a-d 2^nbdaretes
     for(int i = 0; i<k;i++)
     { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
         std::vector<bool> vect(k,true);
@@ -45,7 +35,7 @@ void Nuage::bruteForce(Svgfile& ficsvg)
         do{
             for (auto it=vect.begin(); it!=vect.end(); it++)
             {
-              //  std::cout<<*it;
+               // std::cout<<*it;
             }
             //std::cout << std::endl;
          }while(std::next_permutation(vect.begin(),vect.end()));
@@ -54,266 +44,148 @@ void Nuage::bruteForce(Svgfile& ficsvg)
 
     ///affiche toutes les combinaisons avec nbsommets-1 aretes mais pas forcement couvrantes : c-a-d pas forcement tous les sommets
    // std::cout<<"toutes les combinaisons connexes mais pas forcement couvrantes sont :"<<std::endl;
-    for(int i = n-1; i<k-1;i++)
-    { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
-        std::vector<bool> vect(k,true);
-        for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
-            vect[j] = false;
-        do{
-            for (auto it=vect.begin(); it!=vect.end(); it++)
-            {
-                //std::cout<<*it;
-            }
-            //std::cout << std::endl;
-         }while(std::next_permutation(vect.begin(),vect.end()));
-    }
-   // std::cout<<std::endl; //A SUPPRIMER !!!!
-
     ///maintenant il faut verifier celles qui sont connexes et les eliminer de ces combinaisons
-    int nb_po = 0;
     for(int i = n-1; i<k-1;i++)
     { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
         std::vector<bool> vect(k,true);
         for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
             vect[j] = false;
-
         do{
                int sp1 = 0;
-                int sp2 = 0;
-
+              int sp2 = 0;
             int nb = 0;
             for (auto it=vect.begin(); it!=vect.end(); it++)
             {
                 //La somme des poids
-
-
-                    //std::cout<<*it;
+                   // std::cout<<*it;
                     if (*it)
                     {
-                     // std::cout<<"ca vaut UN"<<std::endl;
+                      //std::cout<<"ca vaut UN"<<std::endl;
+                     /**ON FAIT LA SOMME DES POIDS POUR P1 PUIS POUR P2**/
                       sp1 = sp1 + m_vg[0]->getAindice(nb)->getP1();
                       sp2 = sp2 + m_vg[0]->getAindice(nb)->getP2();
-
                     }
-                    //else std::cout<<"ca vaut ZERO"<<std::endl;
-
+                   // else std::cout<<"ca vaut ZERO"<<std::endl;
                     ++nb;
-
             }
+          //  std::cout<<std::endl;
+                m_pairpoids.push_back({sp1,sp2});
+                m_sommeP1.push_back(sp1);
+                m_sommeP2.push_back(sp2);
                 //LA ON FAIT L'AFFICHAGE
-
-
-                m_vg[0]->dessinerGraphePareto(ficsvg, sp2*10, sp1*10);
-
-
-            ++nb_po;
-
-
-
+                m_vg[0]->dessinerGraphePareto(ficsvg, sp1*10, sp2*10, "rgb(255, 0, 0)");
          }while(std::next_permutation(vect.begin(),vect.end()));
-
-             //std::cout<<"nb_po"<< nb_po<<std::endl;
- /*
-    for (int i =0; i<nb_po; ++i)
-        {
-            double p1 = 0;
-            p1 = m_possibilite[i]->sommePoids(1);
-           std::cout<<"poi"<<p1<<std::endl;
-            std::cout<<"TAILLE"<<m_possibilite[i]->getTaille()<<std::endl;
-            std::cout<<"id arr"<<m_possibilite[i]->getAindice(i)->getIdArete()<<std::endl;
-            double p2 =0;
-            p2 = m_possibilite[i]->sommePoids(2);
-          //  std::cout<<"poi"<<p2<<std::endl;
-
-
-           std::cout<<std::endl;
-            std::cout<<std::endl;
-            std::cout<<std::endl;
-        }*/
-
-
     }
-    /*
-    for(auto it : m_possibilite)
-        it->dessinerGraphePareto(ficsvg, it->sommePoids(1), it->sommePoids(2));*/
-
-
-
-
-
+    for(auto ite = m_sommeP1.begin();ite!=m_sommeP1.end();ite++)
+    {
+      //std::cout << *ite <<std::endl;
+    }
+   // std::cout<<std::endl;
+    for(auto ite2 = m_sommeP2.begin();ite2!=m_sommeP2.end();ite2++)
+    {
+    //  std::cout << *ite2 <<std::endl;
+    }
+    //std::cout<<std::endl;
 }
 
-
-
-
-
-
-void Nuage::toutesPossibilites ()
- {
-
-    std::vector<Arete*> va;
-    std::vector<Sommet* > vs;
-
-     ///On recupere les sommets du graphe original
-
-
-    va.clear();
-    vs.clear();
-
-    ///toutes les combinaisons possibles : c-a-d 2^nbdaretes
-    int k = m_vg[0]->getTaille(); ///NOMBRE DARETE
-
-    for (int p = 0; p <pow(2, k); ++p)
-    {
-        for (int s = 0; s<m_vg[0]->getOrdre(); ++s)
-            vs.push_back(m_vg[0]->getSindice(s));
-    }
-
-   // std::vector<bool> vect_tmp(k,true);
-
-
-    for(int i = 0; i<k; i++)
-    {
-        ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
-        std::vector<bool> vect(k,true);
-
-        for(int j = 0; j< k-i;j++)
-        {
-            vect[j] = false;///J = LARRETE QUON ENLEVE MAINTENANT LA
-        }
-
-        do{
-            for (int s = 0; s<m_vg[0]->getOrdre(); ++i)
-                vs.push_back(m_vg[0]->getSindice(s));
-
-            for (int n=0; n<m_vg[0]->getTaille(); ++n)
-            {
-
-                if (vect[n])
-                {
-
-                    va.push_back(m_vg[0]->getAindice(n));
-                    std::cout<<"val A* "<<m_vg[0]->getAindice(n) <<std::endl;
-                    std::cout<<"Coucou"<<std::endl;
-
-                    //std::cout<<"vectA111 :"<< va[n] <<std::endl;
-                }
-
-            }
-
-            // new Sommet{id,x,y}
-
-
-            //std::cout <<"size"<< va_selec.size()<< std::endl;
-            std::cout << std::endl;
-         }while(std::next_permutation(vect.begin(),vect.end()));
-
-
-        /* Graphe g {va, vs};
-         m_vg.push_back(&g);*/
-
-
-    }
-
-
-
-
- }
-
-void Nuage::supPossibilte()
+void Nuage::DijkstraGraphe(Svgfile& ficsvg)
 {
-    int n = m_vg[0]->getOrdre(); /// NOMBRE DE SOMMET
-    int k = m_vg[0]->getTaille(); ///NOMBRE DARETE
-    for(int i = n-4; i<k;i++)
+    int dis=0;
+    m_sommeP2.clear();
+    for (int i=0; i<m_vg[0]->getOrdre(); ++i)
     {
-            ///affiche toutes les combinaisons avec nbsommets-1 aretes mais pas forcement couvrantes : c-a-d pas forcement tous les sommets
-        std::cout<<"toutes les combinaisons connexes mais pas forcement couvrantes sont :"<<std::endl;
-        for(int i = n-1; i<k-1;i++){ ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
-            std::vector<bool> vect(k,true);
-            for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
-                vect[j] = false;
-            do{
-                for (auto it=vect.begin(); it!=vect.end(); it++)
-                {
-                    std::cout<<*it;
-                }
-                std::cout << std::endl;
-             }while(std::next_permutation(vect.begin(),vect.end()));
-        }
-        std::cout<<std::endl; //A SUPPRIMER !!!!
+        dis = dis + m_vg[0]->Dijkstra(i);
 
-        ///maintenant il faut verifier celles qui sont connexes et les eliminer de ces combinaisons
-        std::cout<<"l espace de recherche est : "<<std::endl;
-        for(int i = n-1; i<k-1;i++)
-        { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
-            std::vector<bool> vect(k,true);
-            for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
-                vect[j] = false;
-            do{
-                for (auto it=vect.begin(); it!=vect.end(); it++)
-                {
-                    std::cout<<*it;
-                }
-                std::cout << std::endl;
-             }while(std::next_permutation(vect.begin(),vect.end()));
-
-        }
-
+        std::cout<<std::endl;
+        std::cout<<"fini pour sommet "<< i<<std::endl;
+        std::cout<<std::endl;
+        m_sommeP2.push_back(dis);
 
     }
+
+    int i =0;
+    for (const auto& h : m_sommeP1)
+    {
+        m_vg[0]->dessinerGraphePareto(ficsvg,  h*10, m_sommeP2[i]*10,"rgb(255, 0, 0)");
+        std::cout<<"poids 2 : "<< m_sommeP2[i]<<std::endl;
+        //std::cout<<"poids 1 : "<< m_sommeP1[i]<<std::endl;
+
+        ++i;
+    }
+  //  m_sommeP2.clear();
+
+
+
 }
-
-
-
-void Nuage::Possibilites ()
- {
-    int n = 0;
-    std::vector<Sommet* > vs = m_vg[0]->getS(); ///On recupere les sommets du graphe original
-    std::vector<Arete* > va ;
-   // va = m_vg[0]->toutesPossibilites();
-
-    for (int i = 0; i < pow(2, m_vg[0]->getTaille()); ++i)
-        n = i+1; //Ca commence de 0
-
-    std::cout<<"il y a "<<n<<" nombre de possiblite"<<std::endl;
-
-    for (size_t i = 0; i < pow(2, m_vg[0]->getTaille()); ++i)
-    {
-        ///IL FAUT CHANGER LES ARETE A CHAQUE TOUR
-        for (int n= 1; n<m_vg[0]->getOrdre(); ++n)
-        {
-            std::cout<<"n"<<n<<std::endl;
-            Graphe g {va, vs};
-            //m_vg[n] = &g;
-            m_vg.push_back(&g);
-        }
-        std::cout<<"i"<<i<<std::endl;
-    }
-
-    m_vg[3]->afficher();
- }
 
 void Nuage::pareto(Svgfile& ficsvg)
 {
-   // m_vg[3]->afficher();
     //ON LE FAIT BOUCLER POUR TOUS LES GRAPHES DE NOTRE VECTEUR
-    /**ON FAIT LA SOMME DES POIDS POUR P1 PUIS POUR P2**/
-    for (size_t i = 0; i <m_possibilite.size(); ++i)
+    int pt_origine=0;
+    int c =0;
+    std::pair<int, int> tmp_pto;
+    int tmp =sqrt(pow(m_sommeP1[0],2)+pow(m_sommeP2[0],2));
+
+    for(size_t i=0;i<m_sommeP1.size();i++)
     {
-       double p1 = m_possibilite[i]->sommePoids(1);
-       double p2 = m_possibilite[i]->sommePoids(2);
 
-       std::cout<<"i"<<i<<std::endl;
+        pt_origine = sqrt(pow(m_sommeP1[i],2)+pow(m_sommeP2[i],2));
 
-        m_possibilite[i]->dessinerGraphePareto(ficsvg,p1,p2);
+        if(pt_origine<tmp)
+        {
+            tmp = pt_origine;
+            c=i;
+
+        }
+      //std::cout<<"pto"<<pt_origine<<std::endl;
+    }
+   /* std::cout<<std::endl;
+    std::cout<<"c"<<c<<std::endl;*/
+    tmp_pto=m_pairpoids[c];
+    //std::cout<<tmp<<std::endl;
+    m_vg[0]->dessinerGraphePareto(ficsvg,m_pairpoids[c].first*10, m_pairpoids[c].second*10,"rgb(0, 255, 0)");
+
+
+    std::sort(m_pairpoids.begin(),m_pairpoids.end(), [](std::pair<int, int> pair1, std::pair<int,int> pair2)
+   {return pair1.first < pair2.first;} );
+
+
+ std::pair<int,int> tmpair = tmp_pto;
+   for (const auto& h : m_pairpoids)
+   {
+         //std::cout<<h.first<<std::endl;
+         if (h.first > tmp_pto.first)
+         {
+           if (h.second < tmpair.second)
+           {
+             tmpair = h;
+             m_vg[0]->dessinerGraphePareto(ficsvg,tmpair.first*10,tmpair.second*10,"rgb(0, 255, 0)");
+           }
+         }
+
+     }
+
+     std::sort(m_pairpoids.begin(),m_pairpoids.end(), [](std::pair<int, int> pair1, std::pair<int,int> pair2)
+    {return pair1.second < pair2.second;} );
+
+    tmpair = tmp_pto;
+
+
+    for (const auto& h : m_pairpoids)
+    {
+      //std::cout<<h.second<<std::endl;
+      if (h.second >tmp_pto.second)
+      {
+        if (h.first <tmpair.first)
+        {
+          tmpair = h;
+          m_vg[0]->dessinerGraphePareto(ficsvg,tmpair.first*10,tmpair.second*10,"rgb(0, 255, 0)");
+        }
+      }
+
     }
 
-
 }
-
-
-
-
 Nuage::~Nuage()
 
 {   //dtor

@@ -12,7 +12,6 @@ Graphe::Graphe(std::vector<Arete* > va, std::vector<Sommet* > vs)
 
     for(int n =0; n<m_ordre; ++n)
         m_s.push_back(vs[n]);
-
 }
 
 
@@ -263,81 +262,32 @@ void Graphe::afficher()
     }
 }
 
-
-
-void Graphe::toutesPossibilites ()
- {
-
-   std::vector<Arete* > va_selec;
-    ///affiche toutes les combinaisons possibles : c-a-d 2^nbdaretes
-    //std::cout<<"toutes les combinaisons possibles sont :"<<std::endl;
-   // int n = m_ordre; /// NOMBRE DE SOMMET
-    int k = m_taille; ///NOMBRE DARETE
-    std::vector<bool> vect_tmp(k,true);
-    for(int i = 0; i<k; i++)
-    {
-        ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
-        std::vector<bool> vect(k,true);
-
-        for(int j = 0; j< k-i;j++)
-        {
-            vect[j] = false;///J = LARRETE QUON ENLEVE MAINTENANT LA
-        }
-
-        do{
-        /*for (auto it=vect.begin(); it!=vect.end(); it++)
-                std::cout <<*it;
-        for (auto it=vect.begin(); it!=vect.end(); it++)
-                std::cout<<"vect 0 "<< vect[0]<<std::endl;*/
-
-            for (int n=0; n<m_taille; ++n)
-            {
-                std::cout<<"vect "<< n << vect[n]<<std::endl;
-                //std::cout<<"vect "<< n <<std::endl;
-            }
-
-
-            //std::cout <<"size"<< va_selec.size()<< std::endl;
-            std::cout << std::endl;
-         }while(std::next_permutation(vect.begin(),vect.end()));
-
-         vect_tmp = vect;
-      /*  for(auto it2 : vect_tmp)
-            std::cout<<"vect temp "<< it2<<std::endl;*/
-    }
-
-/*
-    for(auto it2 : vect_tmp)
-        std::cout<<"vect temp "<< it2<<std::endl;*/
-
-
- }
-
-
-
-
-
-
-void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2)
+void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2, std::string coul)
 {
 
+    int ptrefx=100;
+    int ptrefy=700;
 
     std::string couleur = "rgb(255, 0, 0)";
+    std::string couleurnoir = "rgb(0, 0, 0)";
+    /*fichiersvg.addLine(ptrefx,50,ptrefx,ptrefy,couleurnoir); //axe y
+    fichiersvg.addLine(ptrefx,ptrefy,ptrefx+600,ptrefy,couleurnoir); //axe x
+    fichiersvg.addLine(ptrefx,50,ptrefx-20,70,couleurnoir); //fleche y
+    fichiersvg.addLine(ptrefx,50,ptrefx+20,70,couleurnoir); //fleche y
+    fichiersvg.addLine(ptrefy-20,ptrefy-20,ptrefy,ptrefy,couleurnoir); //fleche x
+    fichiersvg.addLine(ptrefy-20,ptrefy+20,ptrefy,ptrefy,couleurnoir);//fleche x*/
+    fichiersvg.addDisk(m_p1+ptrefx,ptrefy-m_p2, 3, coul); // points
     /*fichiersvg.addLine(100,50,100,400,couleur);
     fichiersvg.addLine(100,400,400,400,couleur);*/
    // fichiersvg.addDisk(m_p1, m_p2, 10, couleur);
-   fichiersvg.addDisk(m_p1, m_p2, 1, couleur);
-
 
 }
 
-
-
 auto comp = [](const std::pair<int, int> &a, const std::pair<int, int> &b) {return a.second > b.second; };
 
-void Graphe::Dijkstra(int Sommetdepart)
+int Graphe::Dijkstra(int Sommetdepart)
  {
-
+    int dis = 0;
      int NbSommet;
      NbSommet=m_ordre;
 
@@ -403,12 +353,14 @@ void Graphe::Dijkstra(int Sommetdepart)
       {                                                                                      //on affiche
         std::cout << "\n Sommet  " << Sommetdepart << " au Sommet " << i << " Poids " << Distances[i] << std::endl;
 
-        std::cout << i;
+        //std::cout << i;
         for (auto p = Parents[i]; p != -1; p = Parents[p])
-          std::cout << " <- " << p;
-        std::cout << std::endl;
+       /*   std::cout << " <- " << p;
+        std::cout << std::endl;*/
+        dis= dis + Distances[i];
 
       }
+      return dis;
 
 }
 
@@ -477,5 +429,3 @@ bool triArete(std::vector<std::pair<int, arete>> v_tri)
 
     return 0;
 }
-
-

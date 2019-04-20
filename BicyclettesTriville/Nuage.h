@@ -11,13 +11,10 @@ class Nuage
         Nuage(Graphe* g);
         void Kruskal(int p, Svgfile& fichier_svg, std::string fichier_1, std::string fichier_2);
         void graphique();
-        void Possibilites();
-        //void bruteForce();
+
         void bruteForce(Svgfile& ficsvg);
-        void toutesPossibilites();
-        void supPossibilte();
+        void DijkstraGraphe(Svgfile& ficsvg);
         void afficherNuage();
-        void test();
         void pareto(Svgfile& ficsvg);
 
         ~Nuage();
@@ -30,6 +27,7 @@ class Nuage
         std::vector<Graphe*> m_possibilite;
         std::vector<int> m_sommeP1;
         std::vector<int> m_sommeP2;
+        std::vector<std::pair<int,int>> m_pairpoids;
 
 };
 
