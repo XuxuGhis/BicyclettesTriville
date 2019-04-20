@@ -133,12 +133,13 @@ void Graphe::afficher ()const
 void Graphe::dessinerGraphe(Svgfile& fichiersvg)
 {
     //fichiersvg.addGrid();
+    for(auto itA : m_a)
+        itA->dessinerArete(fichiersvg, m_s, 1);
 
     for(auto itS : m_s)
         itS->dessinerSommet(fichiersvg, 0);
 
-    for(auto itA : m_a)
-        itA->dessinerArete(fichiersvg, m_s, 1);
+
 
 }
 
@@ -154,18 +155,19 @@ void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int choix_p)
         }
     }
     //fichiersvg.addGrid();
-
-    for(auto itS : m_s)
-    {
-        itS->dessinerSommet(fichiersvg, maxX+50);
-    }
-
     std::vector<Arete* >::iterator itA;
 
     for (int unsigned i = 0; i < T.size(); i++)
     {
         m_a[i]->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second, maxX+50, choix_p);
     }
+
+    for(auto itS : m_s)
+    {
+        itS->dessinerSommet(fichiersvg, maxX+50);
+    }
+
+
 
 }
 

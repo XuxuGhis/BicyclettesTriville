@@ -34,7 +34,10 @@ class Svgfile
         void PlaneteAnime(double planetex, double planetey, double rayon);
         void addText(double x, double y, std::string text, std::string color=defcol);
         void addText(double x, double y, double val, std::string color=defcol);
-
+        void addgroupe(int scaleX ,int scaleY);
+       // void addRectanglePosition(double x, double y, double w, double h, std::string color);
+       // void addPolygon(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, std::string colorFill, double thickness, std::string colorStroke);
+        void fingroupe();
         ///TRUE ou FALSE pour afficher les nbr abscisses et ordonn�es
 
         void addGrid(double span=50.0, bool numbering=true, std::string color="grey");
@@ -42,7 +45,7 @@ class Svgfile
         void addEllipse(double cx, double cy, double rx, double ry, std::string color, std::string filter);
         void addRectangle(double x, double y, std::string color);
         void addRectanglePosition(double x, double y, double w, double h, std::string color);
-        void addPolygon(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, std::string colorFill,  double thickness, std::string colorStroke);
+        void addPolygon(double x1, double y1, double x2, double y2, double x3, double y3, std::string colorFill);
         void lireSVG(std::string fichierNom);
         void addroute(double x1, double y1, double x2, double y2, std::string color);
 };

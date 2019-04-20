@@ -34,6 +34,7 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
     if (selec == 1)
     {
         fichiersvg.addroute(x_som1, y_som1, x_som2, y_som2, "white");
+        //fichiersvg.lireSVG("Cycliste.txt");
        /* fichiersvg.addText(x_text, y_text - 3.7, m_id, couleur2);
        // fichiersvg.addText(x_text-moins, y_text - 3.7-moins, "(", couleur2);
         fichiersvg.addText(x_text-moins-3, y_text - 3.7-moins, m_p1, couleur3);
@@ -82,6 +83,11 @@ void Arete::dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp
     //fichiersvg.addText(x_text+decalage, y_text - 3.7, p, couleur2);
 
 
+}
+
+void Arete::ajoutCycliste(Svgfile& svgfic)
+{
+    svgfic.lireSVG("Cycliste.txt");
 }
 
 

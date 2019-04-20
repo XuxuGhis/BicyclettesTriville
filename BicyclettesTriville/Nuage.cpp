@@ -41,43 +41,54 @@ void Nuage::bruteForce(Svgfile& ficsvg)
          }while(std::next_permutation(vect.begin(),vect.end()));
     }
    // std::cout<<std::endl;
+        int sp1 = 0;
+        int sp2 = 0;
 
     ///affiche toutes les combinaisons avec nbsommets-1 aretes mais pas forcement couvrantes : c-a-d pas forcement tous les sommets
    // std::cout<<"toutes les combinaisons connexes mais pas forcement couvrantes sont :"<<std::endl;
     ///maintenant il faut verifier celles qui sont connexes et les eliminer de ces combinaisons
     for(int i = n-1; i<k-1;i++)
     { ///I = NOMBRE DARETE QUON GARDE POUR CET ESSAI
+        std::cout<<"i"<<i<<std::endl;
+
         std::vector<bool> vect(k,true);
         for(int j = 0; j< k-i;j++) ///J = LARRETE QUON ENLEVE MAINTENANT LA
             vect[j] = false;
         do{
-               int sp1 = 0;
-              int sp2 = 0;
+                sp1 = 0;
+               sp2 = 0;
             int nb = 0;
             for (auto it=vect.begin(); it!=vect.end(); it++)
             {
                 //La somme des poids
-                   // std::cout<<*it;
+                   std::cout<<*it;
                     if (*it)
                     {
                       //std::cout<<"ca vaut UN"<<std::endl;
                      /**ON FAIT LA SOMME DES POIDS POUR P1 PUIS POUR P2**/
                       sp1 = sp1 + m_vg[0]->getAindice(nb)->getP1();
+
                       sp2 = sp2 + m_vg[0]->getAindice(nb)->getP2();
+                      std::cout<<"     sp1 : "<<sp1<<std::endl;
+                      std::cout<<"    sp2 : "<<sp1<<std::endl;
                     }
-                   // else std::cout<<"ca vaut ZERO"<<std::endl;
+                    //else std::cout<<"ca vaut ZERO"<<std::endl;
                     ++nb;
             }
-          //  std::cout<<std::endl;
+            std::cout<<std::endl;
                 m_pairpoids.push_back({sp1,sp2});
                 m_sommeP1.push_back(sp1);
                 m_sommeP2.push_back(sp2);
                 //LA ON FAIT L'AFFICHAGE
                 m_vg[0]->dessinerGraphePareto(ficsvg, sp1*10, sp2*10, "rgb(255, 0, 0)");
+
          }while(std::next_permutation(vect.begin(),vect.end()));
+
+
     }
     for(auto ite = m_sommeP1.begin();ite!=m_sommeP1.end();ite++)
     {
+
       //std::cout << *ite <<std::endl;
     }
    // std::cout<<std::endl;

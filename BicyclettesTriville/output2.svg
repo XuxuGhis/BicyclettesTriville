@@ -1,172 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  width="1510" height="780">
 
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
+<circle cx="250" cy="115" r="30" fill="#F4F4F9" />
+<circle cx="240" cy="160" r="20" fill="#B8DBD9" />
+<circle cx="220" cy="180" r="10" fill="#a1a1a1" />
+<rect x="210" y="190" width="20" height="50" fill="#8C5E58" /><polygon points=" 200,200 250,250 150,250 " />
+<rect x="210" y="190" width="80" height="50" fill="#8C5E58" /><rect x="200" y="270" width="20" height="30" fill="#0D1F22" /><circle cx="350" cy="115" r="30" fill="#F4F4F9" />
+<circle cx="340" cy="160" r="20" fill="#B8DBD9" />
+<circle cx="320" cy="180" r="10" fill="#a1a1a1" />
+<rect x="310" y="190" width="20" height="50" fill="#8C5E58" /><polygon points=" 300,200 350,250 250,250 " />
+<rect x="310" y="190" width="80" height="50" fill="#8C5E58" /><rect x="300" y="270" width="20" height="30" fill="#0D1F22" /><circle cx="250" cy="215" r="30" fill="#F4F4F9" />
+<circle cx="240" cy="260" r="20" fill="#B8DBD9" />
+<circle cx="220" cy="280" r="10" fill="#a1a1a1" />
+<rect x="210" y="290" width="20" height="50" fill="#8C5E58" /><polygon points=" 200,300 250,350 150,350 " />
+<rect x="210" y="290" width="80" height="50" fill="#8C5E58" /><rect x="200" y="370" width="20" height="30" fill="#0D1F22" /><circle cx="350" cy="215" r="30" fill="#F4F4F9" />
+<circle cx="340" cy="260" r="20" fill="#B8DBD9" />
+<circle cx="320" cy="280" r="10" fill="#a1a1a1" />
+<rect x="310" y="290" width="20" height="50" fill="#8C5E58" /><polygon points=" 300,300 350,350 250,350 " />
+<rect x="310" y="290" width="80" height="50" fill="#8C5E58" /><rect x="300" y="370" width="20" height="30" fill="#0D1F22" /><line x1="100" y1="100" x2="200" y2="100" stroke="black" stroke-width="20" />
+<line x1="100" y1="100" x2="200" y2="100" stroke="white" stroke-width="2" stroke-dasharray="4" />
+<line x1="100" y1="100" x2="100" y2="200" stroke="black" stroke-width="20" />
+<line x1="100" y1="100" x2="100" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
+<line x1="200" y1="100" x2="100" y2="200" stroke="black" stroke-width="20" />
+<line x1="200" y1="100" x2="100" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
+<line x1="200" y1="100" x2="200" y2="200" stroke="black" stroke-width="20" />
+<line x1="200" y1="100" x2="200" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
+<line x1="100" y1="200" x2="200" y2="200" stroke="black" stroke-width="20" />
+<line x1="100" y1="200" x2="200" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
+ <g transform="translate(350 , 350)scale(0.25)" >    <circle fill="#F4F4F9" cx="150" cy="15" r="30" />
+    <circle fill="#B8DBD9" cx="140" cy="60" r="20" />
+    <circle fill="#a1a1a1" cx="120" cy="80" r="10" />
     <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
     <polygon fill="#6B6570" points="100,100 150,150 50,150" />
+
     <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
     <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
+ </g> <g transform="translate(450 , 350)scale(0.25)" >    <circle fill="#F4F4F9" cx="150" cy="15" r="30" />
+    <circle fill="#B8DBD9" cx="140" cy="60" r="20" />
+    <circle fill="#a1a1a1" cx="120" cy="80" r="10" />
     <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
     <polygon fill="#6B6570" points="100,100 150,150 50,150" />
+
     <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
     <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
+ </g> <g transform="translate(350 , 450)scale(0.25)" >    <circle fill="#F4F4F9" cx="150" cy="15" r="30" />
+    <circle fill="#B8DBD9" cx="140" cy="60" r="20" />
+    <circle fill="#a1a1a1" cx="120" cy="80" r="10" />
     <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
     <polygon fill="#6B6570" points="100,100 150,150 50,150" />
+
     <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
     <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
+ </g> <g transform="translate(450 , 450)scale(0.25)" >    <circle fill="#F4F4F9" cx="150" cy="15" r="30" />
+    <circle fill="#B8DBD9" cx="140" cy="60" r="20" />
+    <circle fill="#a1a1a1" cx="120" cy="80" r="10" />
     <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
     <polygon fill="#6B6570" points="100,100 150,150 50,150" />
+
     <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
     <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<line x1="100" y1="100" x2="400" y2="100" stroke="black" stroke-width="20" />
-<line x1="100" y1="100" x2="400" y2="100" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="100" y1="100" x2="100" y2="400" stroke="black" stroke-width="20" />
-<line x1="100" y1="100" x2="100" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="100" y1="100" x2="200" y2="200" stroke="black" stroke-width="20" />
-<line x1="100" y1="100" x2="200" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="200" y1="200" x2="300" y2="200" stroke="black" stroke-width="20" />
-<line x1="200" y1="200" x2="300" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="400" y1="100" x2="300" y2="200" stroke="black" stroke-width="20" />
-<line x1="400" y1="100" x2="300" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="400" y1="100" x2="400" y2="400" stroke="black" stroke-width="20" />
-<line x1="400" y1="100" x2="400" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="200" y1="200" x2="200" y2="300" stroke="black" stroke-width="20" />
-<line x1="200" y1="200" x2="200" y2="300" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="300" y1="200" x2="300" y2="300" stroke="black" stroke-width="20" />
-<line x1="300" y1="200" x2="300" y2="300" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="200" y1="300" x2="100" y2="400" stroke="black" stroke-width="20" />
-<line x1="200" y1="300" x2="100" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="200" y1="300" x2="300" y2="300" stroke="black" stroke-width="20" />
-<line x1="200" y1="300" x2="300" y2="300" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="300" y1="300" x2="400" y2="400" stroke="black" stroke-width="20" />
-<line x1="300" y1="300" x2="400" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="black" stroke-width="20" />
-<line x1="100" y1="400" x2="400" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<svg width="450" height="450" viewBox="0 0 200 200" class="house">
-  <g transform = "scale(0.2)">
-    <rect fill="#8C5E58" width="20" height="50" x="110" y="90" />
-    <polygon fill="#6B6570" points="100,100 150,150 50,150" />
-    <rect fill="#8C5E58" width="80" height="50" x="60" y="150" />
-    <rect fill="#0D1F22" width="20" height="30" x="100" y="170" />
-  </g>
-</svg>
-<line x1="850" y1="100" x2="750" y2="200" stroke="black" stroke-width="20" />
-<line x1="850" y1="100" x2="750" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="750" y1="200" x2="750" y2="300" stroke="black" stroke-width="20" />
-<line x1="750" y1="200" x2="750" y2="300" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="550" y1="100" x2="550" y2="400" stroke="black" stroke-width="20" />
-<line x1="550" y1="100" x2="550" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="850" y1="100" x2="850" y2="400" stroke="black" stroke-width="20" />
-<line x1="850" y1="100" x2="850" y2="400" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="550" y1="100" x2="650" y2="200" stroke="black" stroke-width="20" />
-<line x1="550" y1="100" x2="650" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="650" y1="200" x2="750" y2="200" stroke="black" stroke-width="20" />
-<line x1="650" y1="200" x2="750" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
-<line x1="650" y1="200" x2="650" y2="300" stroke="black" stroke-width="20" />
-<line x1="650" y1="200" x2="650" y2="300" stroke="white" stroke-width="2" stroke-dasharray="4" />
+ </g><line x1="450" y1="100" x2="450" y2="200" stroke="black" stroke-width="20" />
+<line x1="450" y1="100" x2="450" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
+<line x1="350" y1="100" x2="450" y2="100" stroke="black" stroke-width="20" />
+<line x1="350" y1="100" x2="450" y2="100" stroke="white" stroke-width="2" stroke-dasharray="4" />
+<line x1="350" y1="100" x2="350" y2="200" stroke="black" stroke-width="20" />
+<line x1="350" y1="100" x2="350" y2="200" stroke="white" stroke-width="2" stroke-dasharray="4" />
   
 
 <defs>

@@ -21,6 +21,7 @@ class Arete
        // bool triArete(std::vector<std::pair<int, arete>> v_tri);
         int getIdArete();
 
+        void ajoutCycliste(Svgfile& svgfic);
         std::vector<std::pair<int, arete>> Ajoutpoidsarete(int choix_p);
 
         double getP1();

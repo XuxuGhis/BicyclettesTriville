@@ -11,10 +11,10 @@ int main()
 
     {
 
-    Svgfile svgout;
-    Svgfile svgout2("output2.svg");
-    Svgfile svgout3("output3.svg");
-    Svgfile svgout4("output4.svg");
+    Svgfile svgout ("output.html");
+    Svgfile svgout2("output2.html");
+    Svgfile svgout3("output3.html");
+    Svgfile svgout4("output4.html");
 
 
 

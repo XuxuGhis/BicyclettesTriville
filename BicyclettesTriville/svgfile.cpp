@@ -36,6 +36,10 @@ Svgfile::Svgfile(std::string _filename, int _width, int _height) :
     std::cout << "OK" << std::endl;
 
     // Writing the header into the SVG file
+    m_ostrm <<"<a href=\"output.html\" class=\"myButton\">Kruskal 1</a>";
+    m_ostrm <<"<a href=\"output2.html\" class=\"myButton\">Kruskal 2</a>";
+    m_ostrm <<"<a href=\"output3.html\" class=\"myButton\">Pareto BruteForce</a>";
+    m_ostrm <<"<a href=\"output4.html\" class=\"myButton\">Pareto Dijsktra </a>";
     m_ostrm << svgHeader;
     m_ostrm << "width=\"" << m_width << "\" height=\"" << m_height << "\">\n\n";
 }
@@ -47,7 +51,47 @@ Svgfile::~Svgfile()
 
     // Writing the ending into the SVG file
     m_ostrm << svgEnding;
-
+    m_ostrm << "<style> .myButton {\n"
+            <<"\t-moz-box-shadow:inset 0px 1px 0px 0px #efdcfb;\n"
+            <<"\t-webkit-box-shadow:inset 0px 1px 0px 0px #efdcfb;\n"
+            <<"\tbox-shadow:inset 0px 1px 0px 0px #efdcfb;\n"
+            <<"\tbackground:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bee0fa), color-stop(1, #7f9ae8));\n"
+            <<"\tbackground:-moz-linear-gradient(top, #bee0fa 5%, #7f9ae8 100%);\n"
+            <<"\tbackground:-webkit-linear-gradient(top, #bee0fa 5%, #7f9ae8 100%);\n"
+            <<"\tbackground:-o-linear-gradient(top, #bee0fa 5%, #7f9ae8 100%);\n"
+            <<"\tbackground:-ms-linear-gradient(top, #bee0fa 5%, #7f9ae8 100%);\n"
+            <<"\tbackground:linear-gradient(to bottom, #bee0fa 5%, #7f9ae8 100%);\n"
+            <<"\tfilter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bee0fa', endColorstr='#7f9ae8',GradientType=0);\n"
+            <<"\tbackground-color:#bee0fa;\n"
+            <<"\t-moz-border-radius:6px;\n"
+            <<"\t-webkit-border-radius:6px;\n"
+            <<"\tborder-radius:6px;\n"
+            <<"\tborder:1px solid #8985f2;\n"
+            <<"\tdisplay:inline-block;\n"
+            <<"\tcursor:pointer;\n"
+            <<"\tcolor:#ffffff;\n"
+            <<"\tfont-family:Arial;\n"
+            <<"\tfont-size:15px;\n"
+            <<"\tfont-weight:bold;\n"
+            <<"\tpadding:6px 24px;\n"
+            <<"\ttext-decoration:none;\n"
+            <<"\ttext-shadow:0px 1px 0px #565ccc;\n"
+            <<"    margin-left: 50px;\n"
+            <<"}\n"
+            <<".myButton:hover {\n"
+            <<"\tbackground:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7f9ae8), color-stop(1, #bee0fa));\n"
+            <<"\tbackground:-moz-linear-gradient(top, #7f9ae8 5%, #bee0fa 100%);\n"
+            <<"\tbackground:-webkit-linear-gradient(top, #7f9ae8 5%, #bee0fa 100%);\n"
+            <<"\tbackground:-o-linear-gradient(top, #7f9ae8 5%, #bee0fa 100%);\n"
+            <<"\tbackground:-ms-linear-gradient(top, #7f9ae8 5%, #bee0fa 100%);\n"
+            <<"\tbackground:linear-gradient(to bottom, #7f9ae8 5%, #bee0fa 100%);\n"
+            <<"\tfilter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f9ae8', endColorstr='#bee0fa',GradientType=0);\n"
+            <<"\tbackground-color:#7f9ae8;\n"
+            <<"}\n"
+            <<".myButton:active {\n"
+            <<"\tposition:relative;\n"
+            <<"\ttop:1px;\n"
+            <<"}</style>";
     // Removing this file from the list of open files
     s_openfiles.erase(m_filename);
 
@@ -128,7 +172,7 @@ void Svgfile::addRectanglePosition(double x, double y, double w, double h, std::
                <<  "/>";
 
 }
-
+/*
 void Svgfile::addPolygon(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, std::string colorFill, double thickness, std::string colorStroke)
 {
 
@@ -141,7 +185,7 @@ void Svgfile::addPolygon(double x1, double y1, double x2, double y2, double x3, 
             << ";stroke:" << colorStroke
             << ";stroke-width:" << thickness
             << "\" />\n";
-}
+}*/
 
 void Svgfile::lireSVG(std::string fichierNom) ///RESSOURCES : Projet INFO 1
 {
@@ -212,7 +256,25 @@ void Svgfile::addGrid(double span, bool numbering, std::string color)
     }
 }
 
+void Svgfile::addPolygon(double x1, double y1, double x2, double y2, double x3, double y3, std::string colorFill)
+{
 
+    m_ostrm << "<polygon points=\" "
+            << x1 << "," << y1 << " "
+            << x2 << "," << y2 << " "
+            << x3 << "," << y3 << " "
+            << "\" />\n";
+}
+
+
+void Svgfile::addgroupe(int scaleX ,int scaleY)
+{
+    m_ostrm<<" <g transform=\"translate("<<scaleX<<" , "<<scaleY<<")scale(0.25)\" >";
+}
+void Svgfile::fingroupe()
+{
+    m_ostrm<<" </g>" ;
+}
 void Svgfile::PlaneteAnime(double planetex, double planetey, double rayon)
 {
     m_ostrm<<"<circle "

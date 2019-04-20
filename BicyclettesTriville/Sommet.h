@@ -14,6 +14,7 @@ class Sommet
         void afficherData ()const;
         void afficherVoisins () const;
         void dessinerSommet(Svgfile& fichiersvg, int decalage);
+        void dessinerSomaison(Svgfile& fichiersvg, int decalage);
 
         int getIdSommet();
         double getX();
