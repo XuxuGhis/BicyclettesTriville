@@ -13,9 +13,11 @@ class Nuage
         void graphique();
 
         void bruteForce(Svgfile& ficsvg);
+        void bruteForceDij();
         void DijkstraGraphe(Svgfile& ficsvg);
         void afficherNuage();
         void pareto(Svgfile& ficsvg);
+        void paretoDij(Svgfile& ficsvg);
 
         ~Nuage();
 

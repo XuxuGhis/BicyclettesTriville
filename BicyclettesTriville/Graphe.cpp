@@ -358,9 +358,10 @@ int Graphe::Dijkstra(int Sommetdepart)
        /*   std::cout << " <- " << p;
         std::cout << std::endl;*/
         dis= dis + Distances[i];
+       // return Distances[i];
 
       }
-      return dis;
+     return dis;
 
 }
 

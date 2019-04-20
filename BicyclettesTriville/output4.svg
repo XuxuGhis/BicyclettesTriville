@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  width="1510" height="780">
 
-<circle cx="270" cy="420" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="260" cy="270" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="210" cy="-40" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="230" cy="-460" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="320" cy="520" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="270" cy="500" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="290" cy="550" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="260" cy="510" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="280" cy="560" r="3" fill="rgb(255, 0, 0)" />
-<circle cx="230" cy="540" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="380" cy="530" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="250" cy="540" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="410" cy="590" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="520" cy="570" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="280" cy="540" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="280" cy="480" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="290" cy="540" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="290" cy="530" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="300" cy="590" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="300" cy="530" r="3" fill="rgb(255, 0, 0)" />
+<circle cx="270" cy="500" r="3" fill="rgb(0, 255, 0)" />
+<circle cx="210" cy="390" r="3" fill="rgb(0, 255, 0)" />
 <text x="700" y="720" fill="rgb(0, 0, 0)" >poids 1</text>
 <text x="20" y="50" fill="rgb(0, 0, 0)" >poids 2</text>
 <line x1="100" y1="50" x2="100" y2="700" stroke="rgb(0, 0, 0)" />

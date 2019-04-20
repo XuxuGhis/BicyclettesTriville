@@ -23,19 +23,20 @@ int main()
 
 
     Graphe g{nomFich_1,nomFich_2};
+    Graphe g2{nomFich_1,nomFich_2};
 
 
     Nuage n(&g);
+    Nuage n2(&g2);
 
     n.bruteForce(svgout3);
 
 
+
     n.pareto(svgout3);
-
+    n.bruteForceDij();
     n.DijkstraGraphe(svgout4);
-   // n.pareto(svgout4);
-
-
+    n.pareto(svgout4);
 
 
 
