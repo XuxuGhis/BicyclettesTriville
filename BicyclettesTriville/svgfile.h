@@ -31,7 +31,7 @@ class Svgfile
         void addDisk(double x, double y, double r, std::string color=defcol);
         void addLine(double x1, double y1, double x2, double y2, std::string color=defcol);
         void addCross(double x, double y, double span, std::string color=defcol);
-
+        void PlaneteAnime(double planetex, double planetey, double rayon);
         void addText(double x, double y, std::string text, std::string color=defcol);
         void addText(double x, double y, double val, std::string color=defcol);
 
@@ -44,6 +44,7 @@ class Svgfile
         void addRectanglePosition(double x, double y, double w, double h, std::string color);
         void addPolygon(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, std::string colorFill,  double thickness, std::string colorStroke);
         void lireSVG(std::string fichierNom);
+        void addroute(double x1, double y1, double x2, double y2, std::string color);
 };
 
 

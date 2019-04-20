@@ -44,8 +44,10 @@ void Sommet::dessinerSommet(Svgfile& fichiersvg, int decalage)
 {
     int rayon = 3;
     std::string couleur = "rgb(200, 0, 0)";
-    fichiersvg.addDisk(m_x+decalage, m_y, rayon, couleur);
-    fichiersvg.addText(m_x+7.7+decalage, m_y -3, m_id, couleur);
+
+    fichiersvg.lireSVG("Somaison.txt");
+   // fichiersvg.addDisk(m_x+decalage, m_y, rayon, couleur);
+   // fichiersvg.addText(m_x+7.7+decalage, m_y -3, m_id, couleur);
 
 }
 

@@ -85,6 +85,28 @@ void Svgfile::addLine(double x1, double y1, double x2, double y2, std::string co
             << "/>\n";
 }
 
+void Svgfile::addroute(double x1, double y1, double x2, double y2, std::string color)
+{
+    m_ostrm << "<line "
+            << attrib("x1", x1)
+            << attrib("y1", y1)
+            << attrib("x2", x2)
+            << attrib("y2", y2)
+            << attrib("stroke", "black")
+            << attrib("stroke-width",20)
+            << "/>\n"
+            << "<line "
+            << attrib("x1", x1)
+            << attrib("y1", y1)
+            << attrib("x2", x2)
+            << attrib("y2", y2)
+            << attrib("stroke", color)
+            << attrib("stroke-width",2)
+            << attrib("stroke-dasharray",4)
+            << "/>\n";
+}
+
+
 void Svgfile::addRectangle(double x, double y, std::string color)
 {
        m_ostrm << "<rect "
@@ -189,6 +211,41 @@ void Svgfile::addGrid(double span, bool numbering, std::string color)
         x+=span;
     }
 }
+
+
+void Svgfile::PlaneteAnime(double planetex, double planetey, double rayon)
+{
+    m_ostrm<<"<circle "
+           <<attrib("cx", planetex)
+           <<attrib("cy", planetey)
+           <<attrib("r", rayon)
+           <<" /> \n"
+           <<"<g "
+           <<attrib("transform", " matrix(0.866, -0.5, 0.25, 0.433, 800, 80)")
+           <<" >\n"
+           <<"<path "
+           <<attrib("d","M 0,70 A 65,70 0 0,0 65,0 5,5 0 0,1 75,0 75,70 0 0,1 0,70Z")
+           <<attrib("fill", "rgb(255,0,0)")
+           <<" >\n"
+           <<"< animateTransform"
+           <<attrib("attributeName","transform")
+           <<attrib("type", "rotate")
+           <<attrib("from", "360 0 0")
+           <<attrib("to", "0 0 0")
+           <<attrib("dur","1s")
+           <<attrib("repeatCount", "indefinite")
+           <<" /> \n"
+           <<"</path>"
+           <<"</g>"
+           <<"<path "
+           <<attrib("d", "M 50,0 A 50,50 0 0,0 -50,0Z")
+           <<attrib("transform","matrix(0.866, -0.5, 0.5, 0.866,")
+           << planetex <<", "<< rayon<<")"
+           <<" /> \n";
+}
+
+
+
 
 std::string makeRGB(int r, int g, int b)
 {

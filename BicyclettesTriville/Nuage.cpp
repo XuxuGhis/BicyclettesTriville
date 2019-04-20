@@ -11,7 +11,7 @@ void Nuage::Kruskal(int p, Svgfile& fichier_svg, std::string fichier_1, std::str
 
     m_vg[m_vg.size()-1]->kruskal(p);
 
-    m_vg[m_vg.size()-1]->dessinerGrapheKruskal(fichier_svg, 500, p);
+    m_vg[m_vg.size()-1]->dessinerGrapheKruskal(fichier_svg, p);
 
 }
 
@@ -169,9 +169,9 @@ void Nuage::DijkstraGraphe(Svgfile& ficsvg)
     {
         dis = m_vg[0]->Dijkstra(i);
 
-        std::cout<<std::endl;
+        /*std::cout<<std::endl;
         std::cout<<"fini pour sommet "<< i<<std::endl;
-        std::cout<<std::endl;
+        std::cout<<std::endl;*/
         m_pairpoids.push_back({m_sommeP1[i],dis});
         m_sommeP2.push_back(dis);
 
@@ -182,7 +182,7 @@ void Nuage::DijkstraGraphe(Svgfile& ficsvg)
     {
 
         m_vg[0]->dessinerGraphePareto(ficsvg,m_pairpoids[i].second*10,m_pairpoids[i].first*10,"rgb(255, 0, 0)");
-        std::cout<<"poids 2 : "<< m_sommeP2[i]<<std::endl;
+       // std::cout<<"poids 2 : "<< m_sommeP2[i]<<std::endl;
         //std::cout<<"poids 1 : "<< m_sommeP1[i]<<std::endl;
 
         ++i;
@@ -212,7 +212,7 @@ void Nuage::paretoDij(Svgfile& ficsvg)
         if(pt_origine<tmp)
         {
             tmp = pt_origine;
-            c=i;
+            c=1;
 
         }
       //std::cout<<"pto"<<pt_origine<<std::endl;
@@ -228,7 +228,7 @@ void Nuage::paretoDij(Svgfile& ficsvg)
    {return pair1.first < pair2.first;} );
 
 
- std::pair<int,int> tmpair = tmp_pto;
+    std::pair<int,int> tmpair = tmp_pto;
    for (const auto& h : m_pairpoids)
    {
          //std::cout<<h.first<<std::endl;
@@ -331,8 +331,13 @@ void Nuage::pareto(Svgfile& ficsvg)
       }
 
     }
-
+    m_pairpoids.clear();
+    m_sommeP1.clear();
+    m_sommeP2.clear();
 }
+
+
+
 Nuage::~Nuage()
 
 {   //dtor

@@ -26,20 +26,20 @@ void Arete::dessinerArete(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp, int s
     x_som2 = v_tmp[m_idS2]->getX();
     y_som2 = v_tmp[m_idS2]->getY();
 
-    double x_text = (x_som1+x_som2)/2;
+    /*double x_text = (x_som1+x_som2)/2;
     double y_text = (y_som1+y_som2)/2;
 
-    double moins = 15;
+    double moins = 15;*/
 
     if (selec == 1)
     {
-        fichiersvg.addLine(x_som1, y_som1, x_som2, y_som2);
-        fichiersvg.addText(x_text, y_text - 3.7, m_id, couleur2);
+        fichiersvg.addroute(x_som1, y_som1, x_som2, y_som2, "white");
+       /* fichiersvg.addText(x_text, y_text - 3.7, m_id, couleur2);
        // fichiersvg.addText(x_text-moins, y_text - 3.7-moins, "(", couleur2);
         fichiersvg.addText(x_text-moins-3, y_text - 3.7-moins, m_p1, couleur3);
        // fichiersvg.addText(x_text-moins-5, y_text - 3.7-moins, ",", couleur3);
         fichiersvg.addText(x_text-moins-7, y_text - 3.7, m_p2, couleur3);
-        //fichiersvg.addText(x_text-moins-9, y_text - 3.7-moins, ")", couleur3);
+        //fichiersvg.addText(x_text-moins-9, y_text - 3.7-moins, ")", couleur3);*/
     }
 
     else if (selec == 0)
@@ -68,10 +68,10 @@ void Arete::dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp
     //std::cout<<"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!"<<std::endl;
 
 
-    double x_text = (x_som1+x_som2)/2;
-    double y_text = (y_som1+y_som2)/2;
+    /*double x_text = (x_som1+x_som2)/2;
+    double y_text = (y_som1+y_som2)/2;*/
 
-    fichiersvg.addLine(x_som1+decalage, y_som1, x_som2+decalage, y_som2);
+    fichiersvg.addroute(x_som1+decalage, y_som1, x_som2+decalage, y_som2, "white");
 
     if (choix_p == 1)
         p = m_p1;
@@ -79,7 +79,7 @@ void Arete::dessinerAreteKruskal(Svgfile& fichiersvg, std::vector<Sommet*> v_tmp
     else if (choix_p == 2)
         p = m_p2;
 
-    fichiersvg.addText(x_text+decalage, y_text - 3.7, p, couleur2);
+    //fichiersvg.addText(x_text+decalage, y_text - 3.7, p, couleur2);
 
 
 }

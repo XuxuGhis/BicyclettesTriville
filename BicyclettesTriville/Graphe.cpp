@@ -143,26 +143,28 @@ void Graphe::dessinerGraphe(Svgfile& fichiersvg)
 }
 
 
-void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int decalage, int choix_p)
+void Graphe::dessinerGrapheKruskal(Svgfile& fichiersvg, int choix_p)
 {
-
-
+    int maxX=0;
+    for(auto itS : m_s)
+    {
+        if( maxX< itS->getX())
+        {
+            maxX = itS->getX() ;
+        }
+    }
     //fichiersvg.addGrid();
 
     for(auto itS : m_s)
     {
-        itS->dessinerSommet(fichiersvg, decalage);
+        itS->dessinerSommet(fichiersvg, maxX+50);
     }
 
     std::vector<Arete* >::iterator itA;
 
-
     for (int unsigned i = 0; i < T.size(); i++)
     {
-        m_a[i]->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second, decalage, choix_p);
-
-       // std::cout<<"sssssssssssssssssssss !!" << T[i].second.first <<std::endl;
-
+        m_a[i]->dessinerAreteKruskal(fichiersvg, m_s, T[i].second.first, T[i].second.second, maxX+50, choix_p);
     }
 
 }
@@ -276,6 +278,7 @@ void Graphe::dessinerGraphePareto(Svgfile& fichiersvg, int m_p1, int m_p2, std::
     fichiersvg.addLine(ptrefx,50,ptrefx+20,70,couleurnoir); //fleche y
     fichiersvg.addLine(ptrefy-20,ptrefy-20,ptrefy,ptrefy,couleurnoir); //fleche x
     fichiersvg.addLine(ptrefy-20,ptrefy+20,ptrefy,ptrefy,couleurnoir);//fleche x*/
+    //fichiersvg.PlaneteAnime(m_p1+ptrefx, ptrefy-m_p2, 3);
     fichiersvg.addDisk(m_p1+ptrefx,ptrefy-m_p2, 3, coul); // points
     /*fichiersvg.addLine(100,50,100,400,couleur);
     fichiersvg.addLine(100,400,400,400,couleur);*/
@@ -351,7 +354,7 @@ int Graphe::Dijkstra(int Sommetdepart)
 
       for (auto i = 0; i != NbSommet; ++i)
       {                                                                                      //on affiche
-        std::cout << "\n Sommet  " << Sommetdepart << " au Sommet " << i << " Poids " << Distances[i] << std::endl;
+       // std::cout << "\n Sommet  " << Sommetdepart << " au Sommet " << i << " Poids " << Distances[i] << std::endl;
 
         //std::cout << i;
         for (auto p = Parents[i]; p != -1; p = Parents[p])

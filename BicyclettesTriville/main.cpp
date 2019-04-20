@@ -18,8 +18,8 @@ int main()
 
 
 
-    std::string nomFich_1 = "broadway.txt";
-    std::string nomFich_2= "broadway_weights_0.txt";
+    std::string nomFich_1 = "cubetown.txt";
+    std::string nomFich_2= "cubetown_weights_0.txt";
 
 
     Graphe g{nomFich_1,nomFich_2};
@@ -36,7 +36,8 @@ int main()
     n.pareto(svgout3);
     n.bruteForceDij();
     n.DijkstraGraphe(svgout4);
-    n.pareto(svgout4);
+    n.paretoDij(svgout4);
+   // n.pareto(svgout4);
 
 
 
